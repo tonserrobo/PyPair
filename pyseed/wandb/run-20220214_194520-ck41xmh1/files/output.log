@@ -1,0 +1,13 @@
+Making rotations
+Building suffix array column
+Building BWT
+Populating FM index character counts
+Generating k-length seeds
+Traceback (most recent call last):
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 179, in <module>
+    main()
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 146, in main
+    training_flag, training_data = generate_training_data(reference_genome, training_iterations, training_flag) #will gen index if does not already exsist
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 96, in generate_training_data
+    training_set = training_data_obj.generate_training_data_full_read_map(training_set)
+TypeError: GenTraining.generate_training_data_full_read_map() missing 1 required positional argument: 'repetitions'

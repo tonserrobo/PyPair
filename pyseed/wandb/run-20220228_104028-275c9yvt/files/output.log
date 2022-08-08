@@ -1,0 +1,21 @@
+Making rotations
+Building suffix array column
+Building BWT
+Populating FM index character counts
+Generating k-length seeds
+Training Set Score : 100.0 %
+Test Set Score : 100.0 %
+3001
+3001
+Traceback (most recent call last):
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 190, in <module>
+    main()
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 181, in main
+    cohen_kappa_score(y_test, y_preb_probs)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\sklearn\metrics\_classification.py", line 644, in cohen_kappa_score
+    confusion = confusion_matrix(y1, y2, labels=labels, sample_weight=sample_weight)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\sklearn\metrics\_classification.py", line 307, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\sklearn\metrics\_classification.py", line 93, in _check_targets
+    raise ValueError(
+ValueError: Classification metrics can't handle a mix of multiclass and continuous-multioutput targets

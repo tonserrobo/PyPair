@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation_2\main.py", line 132, in <module>
+    main()
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation_2\main.py", line 95, in main
+    X_train, X_test, y_train, y_test = train_test_split(x,y, shuffle=True, test_size=0.2)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\sklearn\model_selection\_split.py", line 2420, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\sklearn\model_selection\_split.py", line 2098, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.

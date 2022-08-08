@@ -1,0 +1,24 @@
+Making rotations
+Building suffix array column
+Building BWT
+Populating FM index character counts
+Generating k-length seeds
+an error has occured creating an extended full read length seed
+Traceback (most recent call last):
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 179, in <module>
+    main()
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 145, in main
+    generate_index(reference_genome, count)
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 55, in generate_index
+    index = index_obj.k_length_seed_extension(seed_length, index)
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\gen_index.py", line 209, in k_length_seed_extension
+    index['k-seed-extend'] = k_length_seed_extension
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\pandas\core\frame.py", line 3656, in __setitem__
+    self._set_item(key, value)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\pandas\core\frame.py", line 3833, in _set_item
+    value = self._sanitize_column(value)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\pandas\core\frame.py", line 4537, in _sanitize_column
+    com.require_length_match(value, self.index)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\pandas\core\common.py", line 557, in require_length_match
+    raise ValueError(
+ValueError: Length of values (0) does not match length of index (5001)

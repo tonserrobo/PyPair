@@ -1,0 +1,24 @@
+{
+    "os": "Windows-10-10.0.19042-SP0",
+    "python": "3.10.2",
+    "heartbeatAt": "2022-02-14T10:24:10.556435",
+    "startedAt": "2022-02-14T10:24:08.381200",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "data_sets/5000bp_ref.txt"
+    ],
+    "state": "running",
+    "program": "C:\\Users\\B00460204\\OneDrive - Ulster University\\Phd - FPGA acceleration in genomics\\2020-21 MainResearch\\Seed_generation\\rapid-SMEM\\Rapid-SMEM\\gnb_seed_generation\\main.py",
+    "codePath": "gnb_seed_generation\\main.py",
+    "git": {
+        "remote": "https://github.com/tonserrobo/Rapid-SMEM.git",
+        "commit": "f605be2c21465046c98ce0933e25f858e2a074fa"
+    },
+    "email": "45736383+tonserrobo@users.noreply.github.com",
+    "root": "C:/Users/B00460204/OneDrive - Ulster University/Phd - FPGA acceleration in genomics/2020-21 MainResearch/Seed_generation/rapid-SMEM/Rapid-SMEM",
+    "host": "FHZYMG3",
+    "username": "B00460204",
+    "executable": "C:\\Users\\B00460204\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe"
+}

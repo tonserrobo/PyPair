@@ -1,0 +1,27 @@
+Making rotations
+Building suffix array column
+Building BWT
+Populating FM index character counts
+Generating k-length seeds
+C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\gen_training_data.py:28: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  data.append(i)
+Traceback (most recent call last):
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 159, in <module>
+    main()
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 127, in main
+    training_flag, training_data = generate_training_data(reference_genome, training_iterations, training_flag) #will gen index if does not already exsist
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 76, in generate_training_data
+    training_set = training_data_obj.generate_training_data_2(index, training_iterations)
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\gen_training_data.py", line 28, in generate_training_data_2
+    data.append(i)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\pandas\core\frame.py", line 9023, in append
+    return self._append(other, ignore_index, verify_integrity, sort)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\pandas\core\frame.py", line 9066, in _append
+    result = concat(
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\pandas\util\_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\pandas\core\reshape\concat.py", line 346, in concat
+    op = _Concatenator(
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\pandas\core\reshape\concat.py", line 436, in __init__
+    raise TypeError(msg)
+TypeError: cannot concatenate object of type '<class 'int'>'; only Series and DataFrame objs are valid

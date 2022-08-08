@@ -1,0 +1,143 @@
+2022-02-28 10:41:06,599 INFO    MainThread:1504 [internal.py:wandb_internal():89] W&B internal server running at pid: 1504, started at: 2022-02-28 10:41:06.599883
+2022-02-28 10:41:06,605 INFO    WriterThread:1504 [datastore.py:open_for_write():77] open: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\run-uyw31nff.wandb
+2022-02-28 10:41:06,605 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: check_version
+2022-02-28 10:41:06,610 DEBUG   SenderThread:1504 [sender.py:send():235] send: header
+2022-02-28 10:41:06,610 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: check_version
+2022-02-28 10:41:06,763 DEBUG   SenderThread:1504 [sender.py:send():235] send: run
+2022-02-28 10:41:07,091 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: run_start
+2022-02-28 10:41:07,122 DEBUG   HandlerThread:1504 [meta.py:__init__():36] meta init
+2022-02-28 10:41:07,123 DEBUG   HandlerThread:1504 [meta.py:__init__():50] meta init done
+2022-02-28 10:41:07,123 DEBUG   HandlerThread:1504 [meta.py:probe():210] probe
+2022-02-28 10:41:07,128 INFO    SenderThread:1504 [dir_watcher.py:__init__():169] watching files in: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files
+2022-02-28 10:41:07,128 INFO    SenderThread:1504 [sender.py:_start_run_threads():809] run started: uyw31nff with start time 1646044865
+2022-02-28 10:41:07,128 DEBUG   SenderThread:1504 [sender.py:send():235] send: summary
+2022-02-28 10:41:07,129 INFO    SenderThread:1504 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-28 10:41:07,136 DEBUG   HandlerThread:1504 [meta.py:_setup_git():200] setup git
+2022-02-28 10:41:07,312 DEBUG   HandlerThread:1504 [meta.py:_setup_git():207] setup git done
+2022-02-28 10:41:07,312 DEBUG   HandlerThread:1504 [meta.py:_save_pip():54] save pip
+2022-02-28 10:41:07,313 DEBUG   HandlerThread:1504 [meta.py:_save_pip():68] save pip done
+2022-02-28 10:41:07,313 DEBUG   HandlerThread:1504 [meta.py:probe():248] probe done
+2022-02-28 10:41:07,321 DEBUG   SenderThread:1504 [sender.py:send():235] send: files
+2022-02-28 10:41:07,321 INFO    SenderThread:1504 [sender.py:_save_file():944] saving file wandb-metadata.json with policy now
+2022-02-28 10:41:07,361 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-28 10:41:07,361 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: stop_status
+2022-02-28 10:41:08,132 INFO    Thread-12 :1504 [dir_watcher.py:_on_file_created():217] file/dir created: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\wandb-summary.json
+2022-02-28 10:41:08,132 INFO    Thread-12 :1504 [dir_watcher.py:_on_file_created():217] file/dir created: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\output.log
+2022-02-28 10:41:08,132 INFO    Thread-12 :1504 [dir_watcher.py:_on_file_created():217] file/dir created: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\requirements.txt
+2022-02-28 10:41:08,132 INFO    Thread-12 :1504 [dir_watcher.py:_on_file_created():217] file/dir created: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\wandb-metadata.json
+2022-02-28 10:41:08,163 INFO    Thread-17 :1504 [upload_job.py:push():137] Uploaded file C:\Users\B00460~1\AppData\Local\Temp\tmp3ij_slobwandb\2qs727uh-wandb-metadata.json
+2022-02-28 10:41:10,152 INFO    Thread-12 :1504 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\output.log
+2022-02-28 10:41:12,219 DEBUG   SenderThread:1504 [sender.py:send():235] send: history
+2022-02-28 10:41:12,219 DEBUG   SenderThread:1504 [sender.py:send():235] send: summary
+2022-02-28 10:41:12,225 INFO    SenderThread:1504 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-28 10:41:13,173 INFO    Thread-12 :1504 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\wandb-summary.json
+2022-02-28 10:41:16,198 INFO    Thread-12 :1504 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\output.log
+2022-02-28 10:41:18,068 DEBUG   SenderThread:1504 [sender.py:send():235] send: telemetry
+2022-02-28 10:41:18,068 DEBUG   SenderThread:1504 [sender.py:send():235] send: exit
+2022-02-28 10:41:18,068 INFO    SenderThread:1504 [sender.py:send_exit():371] handling exit code: 1
+2022-02-28 10:41:18,068 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-28 10:41:18,068 INFO    SenderThread:1504 [sender.py:send_exit():373] handling runtime: 10
+2022-02-28 10:41:18,071 INFO    SenderThread:1504 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-28 10:41:18,071 INFO    SenderThread:1504 [sender.py:send_exit():379] send defer
+2022-02-28 10:41:18,071 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: poll_exit
+2022-02-28 10:41:18,071 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: defer
+2022-02-28 10:41:18,071 INFO    HandlerThread:1504 [handler.py:handle_request_defer():154] handle defer: 0
+2022-02-28 10:41:18,071 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: defer
+2022-02-28 10:41:18,071 INFO    SenderThread:1504 [sender.py:send_request_defer():388] handle sender defer: 0
+2022-02-28 10:41:18,071 INFO    SenderThread:1504 [sender.py:transition_state():392] send defer: 1
+2022-02-28 10:41:18,072 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: defer
+2022-02-28 10:41:18,072 INFO    HandlerThread:1504 [handler.py:handle_request_defer():154] handle defer: 1
+2022-02-28 10:41:18,129 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: defer
+2022-02-28 10:41:18,129 INFO    SenderThread:1504 [sender.py:send_request_defer():388] handle sender defer: 1
+2022-02-28 10:41:18,129 INFO    SenderThread:1504 [sender.py:transition_state():392] send defer: 2
+2022-02-28 10:41:18,129 DEBUG   SenderThread:1504 [sender.py:send():235] send: stats
+2022-02-28 10:41:18,137 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: defer
+2022-02-28 10:41:18,137 INFO    HandlerThread:1504 [handler.py:handle_request_defer():154] handle defer: 2
+2022-02-28 10:41:18,137 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: defer
+2022-02-28 10:41:18,137 INFO    SenderThread:1504 [sender.py:send_request_defer():388] handle sender defer: 2
+2022-02-28 10:41:18,137 INFO    SenderThread:1504 [sender.py:transition_state():392] send defer: 3
+2022-02-28 10:41:18,137 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: defer
+2022-02-28 10:41:18,137 INFO    HandlerThread:1504 [handler.py:handle_request_defer():154] handle defer: 3
+2022-02-28 10:41:18,137 DEBUG   SenderThread:1504 [sender.py:send():235] send: summary
+2022-02-28 10:41:18,137 INFO    SenderThread:1504 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-28 10:41:18,140 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: defer
+2022-02-28 10:41:18,140 INFO    SenderThread:1504 [sender.py:send_request_defer():388] handle sender defer: 3
+2022-02-28 10:41:18,140 INFO    SenderThread:1504 [sender.py:transition_state():392] send defer: 4
+2022-02-28 10:41:18,140 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: defer
+2022-02-28 10:41:18,140 INFO    HandlerThread:1504 [handler.py:handle_request_defer():154] handle defer: 4
+2022-02-28 10:41:18,140 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: defer
+2022-02-28 10:41:18,140 INFO    SenderThread:1504 [sender.py:send_request_defer():388] handle sender defer: 4
+2022-02-28 10:41:18,176 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-28 10:41:18,204 INFO    Thread-12 :1504 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\wandb-summary.json
+2022-02-28 10:41:18,204 INFO    Thread-12 :1504 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\output.log
+2022-02-28 10:41:18,392 INFO    SenderThread:1504 [sender.py:transition_state():392] send defer: 5
+2022-02-28 10:41:18,392 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: poll_exit
+2022-02-28 10:41:18,393 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: defer
+2022-02-28 10:41:18,393 INFO    HandlerThread:1504 [handler.py:handle_request_defer():154] handle defer: 5
+2022-02-28 10:41:18,393 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: defer
+2022-02-28 10:41:18,393 INFO    SenderThread:1504 [sender.py:send_request_defer():388] handle sender defer: 5
+2022-02-28 10:41:18,394 INFO    SenderThread:1504 [dir_watcher.py:finish():283] shutting down directory watcher
+2022-02-28 10:41:18,510 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-28 10:41:19,208 INFO    SenderThread:1504 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\config.yaml
+2022-02-28 10:41:19,208 INFO    SenderThread:1504 [dir_watcher.py:finish():313] scan: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files
+2022-02-28 10:41:19,208 INFO    SenderThread:1504 [dir_watcher.py:finish():327] scan save: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\config.yaml config.yaml
+2022-02-28 10:41:19,208 INFO    SenderThread:1504 [dir_watcher.py:finish():327] scan save: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\output.log output.log
+2022-02-28 10:41:19,214 INFO    SenderThread:1504 [dir_watcher.py:finish():327] scan save: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\requirements.txt requirements.txt
+2022-02-28 10:41:19,215 INFO    SenderThread:1504 [dir_watcher.py:finish():327] scan save: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\wandb-metadata.json wandb-metadata.json
+2022-02-28 10:41:19,215 INFO    SenderThread:1504 [dir_watcher.py:finish():327] scan save: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\wandb-summary.json wandb-summary.json
+2022-02-28 10:41:19,225 INFO    SenderThread:1504 [sender.py:transition_state():392] send defer: 6
+2022-02-28 10:41:19,225 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: poll_exit
+2022-02-28 10:41:19,225 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: defer
+2022-02-28 10:41:19,225 INFO    HandlerThread:1504 [handler.py:handle_request_defer():154] handle defer: 6
+2022-02-28 10:41:19,232 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: defer
+2022-02-28 10:41:19,232 INFO    SenderThread:1504 [sender.py:send_request_defer():388] handle sender defer: 6
+2022-02-28 10:41:19,232 INFO    SenderThread:1504 [file_pusher.py:finish():177] shutting down file pusher
+2022-02-28 10:41:19,337 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-28 10:41:19,337 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: poll_exit
+2022-02-28 10:41:19,452 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-28 10:41:19,452 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: poll_exit
+2022-02-28 10:41:19,566 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-28 10:41:19,566 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: poll_exit
+2022-02-28 10:41:19,675 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-28 10:41:19,675 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: poll_exit
+2022-02-28 10:41:19,791 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-28 10:41:19,791 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: poll_exit
+2022-02-28 10:41:19,841 INFO    Thread-21 :1504 [upload_job.py:push():137] Uploaded file C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\wandb-summary.json
+2022-02-28 10:41:19,857 INFO    Thread-18 :1504 [upload_job.py:push():137] Uploaded file C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\config.yaml
+2022-02-28 10:41:19,874 INFO    Thread-20 :1504 [upload_job.py:push():137] Uploaded file C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\requirements.txt
+2022-02-28 10:41:19,882 INFO    Thread-19 :1504 [upload_job.py:push():137] Uploaded file C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\files\output.log
+2022-02-28 10:41:19,898 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-28 10:41:19,899 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: poll_exit
+2022-02-28 10:41:20,006 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-28 10:41:20,006 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: poll_exit
+2022-02-28 10:41:20,095 INFO    Thread-11 (_thread_body):1504 [sender.py:transition_state():392] send defer: 7
+2022-02-28 10:41:20,095 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: defer
+2022-02-28 10:41:20,095 INFO    HandlerThread:1504 [handler.py:handle_request_defer():154] handle defer: 7
+2022-02-28 10:41:20,095 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: defer
+2022-02-28 10:41:20,095 INFO    SenderThread:1504 [sender.py:send_request_defer():388] handle sender defer: 7
+2022-02-28 10:41:20,111 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-28 10:41:20,373 INFO    SenderThread:1504 [sender.py:transition_state():392] send defer: 8
+2022-02-28 10:41:20,373 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: poll_exit
+2022-02-28 10:41:20,374 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: defer
+2022-02-28 10:41:20,374 INFO    HandlerThread:1504 [handler.py:handle_request_defer():154] handle defer: 8
+2022-02-28 10:41:20,374 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: defer
+2022-02-28 10:41:20,374 INFO    SenderThread:1504 [sender.py:send_request_defer():388] handle sender defer: 8
+2022-02-28 10:41:20,374 INFO    SenderThread:1504 [sender.py:transition_state():392] send defer: 9
+2022-02-28 10:41:20,377 DEBUG   SenderThread:1504 [sender.py:send():235] send: final
+2022-02-28 10:41:20,377 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: defer
+2022-02-28 10:41:20,377 INFO    HandlerThread:1504 [handler.py:handle_request_defer():154] handle defer: 9
+2022-02-28 10:41:20,377 DEBUG   SenderThread:1504 [sender.py:send():235] send: footer
+2022-02-28 10:41:20,377 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: defer
+2022-02-28 10:41:20,377 INFO    SenderThread:1504 [sender.py:send_request_defer():388] handle sender defer: 9
+2022-02-28 10:41:20,491 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: poll_exit
+2022-02-28 10:41:20,491 DEBUG   SenderThread:1504 [sender.py:send_request():249] send_request: poll_exit
+2022-02-28 10:41:20,491 INFO    SenderThread:1504 [file_pusher.py:join():182] waiting for file pusher
+2022-02-28 10:41:20,904 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: get_summary
+2022-02-28 10:41:20,904 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: sampled_history
+2022-02-28 10:41:20,904 DEBUG   HandlerThread:1504 [handler.py:handle_request():131] handle_request: shutdown
+2022-02-28 10:41:20,904 INFO    HandlerThread:1504 [handler.py:finish():739] shutting down handler
+2022-02-28 10:41:21,387 INFO    WriterThread:1504 [datastore.py:close():281] close: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220228_104105-uyw31nff\run-uyw31nff.wandb
+2022-02-28 10:41:21,919 INFO    SenderThread:1504 [sender.py:finish():1075] shutting down sender
+2022-02-28 10:41:21,919 INFO    SenderThread:1504 [file_pusher.py:finish():177] shutting down file pusher
+2022-02-28 10:41:21,919 INFO    SenderThread:1504 [file_pusher.py:join():182] waiting for file pusher
+2022-02-28 10:41:21,919 INFO    MainThread:1504 [internal.py:handle_exit():79] Internal process exited

@@ -1,0 +1,17 @@
+Making rotations
+Building suffix array column
+Building BWT
+Populating FM index character counts
+Generating k-length seeds
+Training Set Score : 100.0 %
+Test Set Score : 100.0 %
+3001
+3001
+Traceback (most recent call last):
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 190, in <module>
+    main()
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\main.py", line 182, in main
+    log_loss(y_test, y_preb_probs)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\sklearn\metrics\_classification.py", line 2424, in log_loss
+    raise ValueError(
+ValueError: y_true and y_pred contain different number of classes 3001, 5001. Please provide the true labels explicitly through the labels argument. Classes found in y_true: [   1    2    3 ... 4997 4999 5000]

@@ -1,0 +1,19 @@
+getting started
+
+pyseed is a python based short read alignment algorithm incorporating leared index exact match seed generation. Fundamentally, 
+pyseed goes through the following principle steps: 
+    (1) FASTA reference and FASTQ reads are read using biopython (ref)
+    (2) mapping locations from FASTQ seeds are built to a internal dictonary 
+    (3) pysam [SW alignment]
+To begining generating seeds and mapping them to their likly alignment locations via the seed generation model run:
+    python main.py ... argvs
+
+if the model weights are not available for your chosen geneome then you will be prompted to provide a reference.txt and name 
+for your new model weights. This will invoke reference genome indexing, generation of model training data and training of the model. 
+your saved weights will then be added to your project directory which can be executed. 
+
+Generate Index
+
+If model weights are not available for the genome you are using, you need to generate a new reference index, training data
+and retrain the seed generation model. This is achieved through the following steps:
+1. Generaet index:

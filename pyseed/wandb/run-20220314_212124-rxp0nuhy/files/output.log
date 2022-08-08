@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation_3\main.py", line 133, in <module>
+    main()
+  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation_3\main.py", line 102, in main
+    wandb.log({'Training Score': model.score(X_train, y_train), 'Test Score': model.score(X_test, y_test), 'Classification report': classification_report(y_test, model.predict(X_test)) })
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\sklearn\base.py", line 651, in score
+    return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\sklearn\naive_bayes.py", line 83, in predict
+    jll = self._joint_log_likelihood(X)
+  File "C:\Users\B00460204\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\sklearn\naive_bayes.py", line 493, in _joint_log_likelihood
+    joint_log_likelihood = np.array(joint_log_likelihood).T
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 29.8 GiB for an array with shape (10001, 400040) and data type float64

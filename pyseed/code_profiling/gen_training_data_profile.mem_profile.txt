@@ -1,0 +1,143 @@
+Filename: gen_training_data_profile.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+     5   71.445 MiB   71.445 MiB           1   @profile
+     6                                         def generate_labeled_training_data(training_data, repetitions):
+     7                                                 '''
+     8                                                 Generate training data based on repeating the number of occurances of k-seed and its assocated org_location.
+     9                                                 '''
+    10   71.445 MiB    0.000 MiB           1           seed = []
+    11   71.445 MiB    0.000 MiB           1           label = []
+    12
+    13   71.520 MiB    0.000 MiB           5           for i in range(0,repetitions):
+    14   71.520 MiB    0.074 MiB         768               for i in training_data['k-seed']:
+    15   71.520 MiB    0.000 MiB         764                   seed.append(i)
+    16   71.520 MiB    0.000 MiB         768               for i in training_data['org_location']:
+    17   71.520 MiB    0.000 MiB         764                   label.append(i)
+    18
+    19   71.520 MiB    0.000 MiB           1           data = pd.DataFrame()
+    20   71.703 MiB    0.184 MiB           1           data['k-seed'] = seed
+    21   71.707 MiB    0.004 MiB           1           data['position_label'] = label
+    22   71.707 MiB    0.000 MiB           1           del seed
+    23   71.707 MiB    0.000 MiB           1           del label
+    24   71.707 MiB    0.000 MiB           1           return data
+
+
+Filename: gen_training_data_profile.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    26   71.945 MiB   71.945 MiB           1   @profile
+    27                                         def generate_training_data_full_read_map(training_data, repetitions):
+    28                                             '''
+    29                                             Generate training data based on repeating the number of occurances of k-seed and its assocated org_location.
+    30                                             '''
+    31   71.945 MiB    0.000 MiB           1       seed = []
+    32
+    33   71.945 MiB    0.000 MiB           5       for i in range(0,repetitions):
+    34   71.945 MiB    0.000 MiB         768           for i in training_data['k-seed-extend']:
+    35   71.945 MiB    0.000 MiB         764               seed.append(i)
+    36
+    37   71.945 MiB    0.000 MiB           1       data = pd.DataFrame()
+    38   71.953 MiB    0.008 MiB           1       data['k-seed-extend'] = seed
+    39   71.953 MiB    0.000 MiB           1       del seed
+    40   71.953 MiB    0.000 MiB           1       return data
+
+
+Filename: gen_training_data_profile.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    61   71.801 MiB   71.801 MiB           1   @profile
+    62                                         def reverse_k_seed_string(training_data):
+    63                                             """
+    64                                             Method to reverse k-seed string and include within training set as additional feature
+    65                                             """
+    66   71.801 MiB    0.000 MiB           1       data = []
+    67   71.816 MiB    0.000 MiB         765       for i in training_data['k-seed']:
+    68   71.816 MiB    0.012 MiB         764           rev_seed = i[::-1]
+    69   71.816 MiB    0.004 MiB         764           data.append(rev_seed)
+    70
+    71   71.816 MiB    0.000 MiB           1       training_data['rev_k-seed'] = data
+    72   71.816 MiB    0.000 MiB           1       del data
+    73   71.816 MiB    0.000 MiB           1       return training_data
+
+
+Filename: gen_training_data_profile.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    75   72.023 MiB   72.023 MiB           1   @profile
+    76                                         def reverse_k_seed_string_full_map(training_data):
+    77                                             """
+    78                                             Method to reverse k-seed string and include within training set as additional feature
+    79                                             """
+    80   72.023 MiB    0.000 MiB           1       data = []
+    81   72.086 MiB    0.000 MiB         765       for i in training_data['k-seed-extend']:
+    82   72.086 MiB    0.062 MiB         764           rev_seed = i[::-1]
+    83   72.086 MiB    0.000 MiB         764           data.append(rev_seed)
+    84
+    85   72.094 MiB    0.008 MiB           1       training_data['rev_k-seed-extend'] = data
+    86   72.094 MiB    0.000 MiB           1       del data
+    87   72.094 MiB    0.000 MiB           1       return training_data
+
+
+Filename: gen_training_data_profile.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    92   70.703 MiB   70.703 MiB           1   @profile
+    93                                         def generate_training_data(reference_genome, training_iterations):
+    94                                             """
+    95                                             Function call to GenTraining() class for training data generation. The action of generating training data will change the training
+    96                                             flag to True, causing the model to retrain for the given training set.
+    97                                             """
+    98                                             # Read/Generate reference index file
+    99   70.703 MiB    0.000 MiB           1       try:
+   100   71.445 MiB    0.742 MiB           1           index = pd.read_csv("data_sets/indexed_reference.csv")
+   101                                             except FileNotFoundError:
+   102                                                 print("indexed_reference.csv file not found") #not calling index gen from here
+   103                                                 #index = generate_index(reference_genome)
+   104
+   105   71.445 MiB    0.000 MiB           1       encoder_decoder = Encode_decode()
+   106
+   107                                             # Generate and encode foward training data
+   108   71.707 MiB   71.707 MiB           1       training_set = generate_labeled_training_data(index, training_iterations)
+   109   71.707 MiB    0.000 MiB           1       training_k_seeds = list(training_set['k-seed'])
+   110   71.801 MiB    0.094 MiB           1       training_set['k-seed'] = encoder_decoder.encode(training_k_seeds) # 2bit encoding
+   111
+   112                                             # Generate and encode reverse seed string
+   113   71.816 MiB   71.816 MiB           1       training_set = reverse_k_seed_string(training_set)
+   114   71.816 MiB    0.000 MiB           1       training_k_seeds_rev = list(training_set['rev_k-seed'])
+   115   71.945 MiB    0.129 MiB           1       training_set['rev_k-seed'] = encoder_decoder.encode(training_k_seeds_rev)
+   116
+   117                                             #for full read mapping - fwd
+   118   71.953 MiB   71.953 MiB           1       training_set_full_map_fwd = generate_training_data_full_read_map(index, training_iterations)     
+   119   71.953 MiB    0.000 MiB           1       training_k_seeds_extend_fwd = list(training_set_full_map_fwd['k-seed-extend'])
+   120   72.023 MiB    0.070 MiB           1       training_set['k-seed-extend'] = encoder_decoder.encode(training_k_seeds_extend_fwd) # 2bit encoding
+   121
+   122                                             #for full read mapping - rev
+   123   72.094 MiB   72.094 MiB           1       training_set_full_map_rev = reverse_k_seed_string_full_map(training_set)
+   124   72.094 MiB    0.000 MiB           1       training_k_seeds_extend_rev = list(training_set_full_map_rev['rev_k-seed-extend'])
+   125   72.109 MiB    0.016 MiB           1       training_set['rev_k-seed-extend'] = encoder_decoder.encode(training_k_seeds_extend_rev)
+   126   72.109 MiB    0.000 MiB           1       try:
+   127   72.410 MiB    0.301 MiB           1           training_set.to_csv("data_sets/training_data.csv", index = False)
+   128                                             except OSError:
+   129                                                 print("Cannot find data_sets directory, creating one...")
+   130                                                 os.makedirs('data_sets')
+   131                                                 training_set.to_csv("data_sets/training_data.csv", index = False)
+   132
+   133   72.410 MiB    0.000 MiB           1       training_flag = True
+   134   72.410 MiB    0.000 MiB           1       return training_flag, training_set
+
+
+Filename: gen_training_data_profile.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+   136   70.703 MiB   70.703 MiB           1   @profile
+   137                                         def main():
+   138   70.703 MiB    0.000 MiB           1       training_iterations = 4
+   139   70.703 MiB    0.000 MiB           1       reference_genome_file = r"C:\Users\tonyr\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation_2\code_profiling\5000bp_ref.txt"
+   140   72.410 MiB   72.410 MiB           1       training_flag, training_data = generate_training_data(reference_genome_file, training_iterations)

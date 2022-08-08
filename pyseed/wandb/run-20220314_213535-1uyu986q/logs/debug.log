@@ -1,0 +1,25 @@
+2022-03-14 21:35:35,691 INFO    MainThread:27420 [wandb_setup.py:_flush():75] Loading settings from C:\Users\B00460204\.config\wandb\settings
+2022-03-14 21:35:35,691 INFO    MainThread:27420 [wandb_setup.py:_flush():75] Loading settings from C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation_3\wandb\settings
+2022-03-14 21:35:35,691 INFO    MainThread:27420 [wandb_setup.py:_flush():75] Loading settings from environment variables: {}
+2022-03-14 21:35:35,691 INFO    MainThread:27420 [wandb_setup.py:_flush():75] Inferring run settings from compute environment: {'program_relpath': 'gnb_seed_generation_3\\main.py', 'program': 'C:\\Users\\B00460204\\OneDrive - Ulster University\\Phd - FPGA acceleration in genomics\\2020-21 MainResearch\\Seed_generation\\rapid-SMEM\\Rapid-SMEM\\gnb_seed_generation_3\\main.py'}
+2022-03-14 21:35:35,693 INFO    MainThread:27420 [wandb_init.py:_log_setup():386] Logging user logs to C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation_3\wandb\run-20220314_213535-1uyu986q\logs\debug.log
+2022-03-14 21:35:35,693 INFO    MainThread:27420 [wandb_init.py:_log_setup():387] Logging internal logs to C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation_3\wandb\run-20220314_213535-1uyu986q\logs\debug-internal.log
+2022-03-14 21:35:35,695 INFO    MainThread:27420 [wandb_init.py:init():420] calling init triggers
+2022-03-14 21:35:35,696 INFO    MainThread:27420 [wandb_init.py:init():425] wandb.init called with sweep_config: {}
+config: {}
+2022-03-14 21:35:35,698 INFO    MainThread:27420 [wandb_init.py:init():471] starting backend
+2022-03-14 21:35:35,698 INFO    MainThread:27420 [backend.py:_multiprocessing_setup():99] multiprocessing start_methods=spawn, using: spawn
+2022-03-14 21:35:35,705 INFO    MainThread:27420 [backend.py:ensure_launched():219] starting backend process...
+2022-03-14 21:35:36,110 INFO    MainThread:27420 [backend.py:ensure_launched():224] started backend process with pid: 21372
+2022-03-14 21:35:36,111 INFO    MainThread:27420 [wandb_init.py:init():480] backend started and connected
+2022-03-14 21:35:36,117 INFO    MainThread:27420 [wandb_init.py:init():550] updated telemetry
+2022-03-14 21:35:36,327 INFO    MainThread:27420 [wandb_init.py:init():581] communicating current version
+2022-03-14 21:35:38,551 INFO    MainThread:27420 [wandb_init.py:init():586] got version response upgrade_message: "wandb version 0.12.11 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2022-03-14 21:35:38,551 INFO    MainThread:27420 [wandb_init.py:init():596] communicating run to backend with 30 second timeout
+2022-03-14 21:35:38,835 INFO    MainThread:27420 [wandb_init.py:init():624] starting run threads in backend
+2022-03-14 21:35:39,282 INFO    MainThread:27420 [wandb_run.py:_console_start():1827] atexit reg
+2022-03-14 21:35:39,290 INFO    MainThread:27420 [wandb_run.py:_redirect():1701] redirect: SettingsConsole.WRAP
+2022-03-14 21:35:39,290 INFO    MainThread:27420 [wandb_run.py:_redirect():1738] Wrapping output streams.
+2022-03-14 21:35:39,294 INFO    MainThread:27420 [wandb_run.py:_redirect():1762] Redirects installed.
+2022-03-14 21:35:39,294 INFO    MainThread:27420 [wandb_init.py:init():651] run started, returning control to user process

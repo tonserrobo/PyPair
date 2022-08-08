@@ -1,0 +1,238 @@
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+     5   70.438 MiB   70.438 MiB           1   @profile
+     6                                         def rotations(s, index):
+     7                                             """
+     8                                             Rotate index string by 1
+     9                                             """
+    10   70.445 MiB    0.008 MiB           1       print("Making rotations")
+    11   70.445 MiB    0.000 MiB           1       rotations = []
+    12
+    13   70.508 MiB    0.000 MiB         192       for i in range(len(s)):
+    14   70.508 MiB    0.000 MiB         191           end_number = len(s)
+    15   70.508 MiB    0.000 MiB         191           status = round(((i/end_number)*100),2)
+    16                                                 #print (str(status) + "%") # clears the console too quick so it dosnt show anything 
+    17   70.508 MiB    0.000 MiB         191           row = s[i:] + s[:i]
+    18   70.508 MiB    0.062 MiB         191           rotations.append(row)
+    19
+    20   70.777 MiB    0.270 MiB           1       index['pre_sorted'] = rotations
+    21   70.777 MiB    0.000 MiB           1       del rotations
+    22   70.785 MiB    0.008 MiB           1       index['org_location'] = index['pre_sorted'].index
+    23   70.785 MiB    0.000 MiB           1       return index
+
+
+Filename: gen_index_profile.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    25   70.785 MiB   70.785 MiB           1   @profile
+    26                                         def suffix_array(index):
+    27                                             """
+    28                                             method for building the suffix array from input reference
+    29                                             """
+    30   70.785 MiB    0.000 MiB           1       print("Building suffix array column")
+    31   70.789 MiB    0.004 MiB           1       index['suffix_array'] = index['pre_sorted']
+    32   70.977 MiB    0.188 MiB           1       index = index.sort_values(by=['suffix_array'])
+    33   71.078 MiB    0.102 MiB           1       index = index.drop(['pre_sorted'], axis = 1)
+    34   71.078 MiB    0.000 MiB           1       index = index.reset_index(drop=True)
+    35   71.078 MiB    0.000 MiB           1       return index
+
+
+Filename: gen_index_profile.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    37   71.078 MiB   71.078 MiB           1   @profile
+    38                                         def first_last(index):
+    39                                             """
+    40                                             method for building the first and last(BWT) column of the index file
+    41                                             """
+    42   71.078 MiB    0.000 MiB           1       print("Building BWT")
+    43   71.078 MiB    0.000 MiB           1       first = []
+    44   71.078 MiB    0.000 MiB           1       last = []
+    45
+    46   71.078 MiB    0.000 MiB         192       for row in index['suffix_array']:
+    47   71.078 MiB    0.000 MiB         191           f = row[:1]
+    48   71.078 MiB    0.000 MiB         191           first.append(f)
+    49   71.078 MiB    0.000 MiB           1       index['first'] = first
+    50   71.078 MiB    0.000 MiB           1       del first
+    51
+    52   71.078 MiB    0.000 MiB         192       for row in index['suffix_array']:
+    53   71.078 MiB    0.000 MiB         191           l = row[-1:]
+    54   71.078 MiB    0.000 MiB         191           last.append(l)
+    55   71.078 MiB    0.000 MiB           1       index['BWT'] = last
+    56   71.078 MiB    0.000 MiB           1       del last
+    57
+    58   71.078 MiB    0.000 MiB           1       return index
+
+
+Filename: gen_index_profile.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    60   71.078 MiB   71.078 MiB           1   @profile
+    61                                         def char_count(index):
+    62                                             """
+    63                                             method for populating FM index char counts from BWT.
+    64                                             """
+    65   71.078 MiB    0.000 MiB           1       print("Populating FM index character counts")
+    66   71.082 MiB    0.004 MiB           1       index['$']=''
+    67   71.082 MiB    0.000 MiB           1       index['A']=''
+    68   71.082 MiB    0.000 MiB           1       index['C']=''
+    69   71.082 MiB    0.000 MiB           1       index['G']=''
+    70   71.082 MiB    0.000 MiB           1       index['T']=''
+    71
+    72                                             # counts for $
+    73   71.082 MiB    0.000 MiB           1       symbol = "$"
+    74   71.082 MiB    0.000 MiB           1       count = 0
+    75   71.082 MiB    0.000 MiB           1       count_list = []
+    76                                             # print("counting all $ symbols")
+    77
+    78   71.082 MiB    0.000 MiB         192       for i in index['BWT']:
+    79   71.082 MiB    0.000 MiB         191           if i == symbol:
+    80   71.082 MiB    0.000 MiB           1               count +=1
+    81                                                 else:
+    82   71.082 MiB    0.000 MiB         190               count = count
+    83   71.082 MiB    0.000 MiB         191           count_list.append(count)
+    84   71.086 MiB    0.004 MiB           1       index['$'] = count_list
+    85   71.086 MiB    0.000 MiB           1       del count_list
+    86
+    87                                             # counts for A
+    88   71.086 MiB    0.000 MiB           1       symbol = "A"
+    89   71.086 MiB    0.000 MiB           1       count = 0
+    90   71.086 MiB    0.000 MiB           1       count_list = []
+    91   71.086 MiB    0.000 MiB         192       for i in index['BWT']:
+    92   71.086 MiB    0.000 MiB         191           if i == symbol:
+    93   71.086 MiB    0.000 MiB           1               count +=1
+    94                                                 else:
+    95   71.086 MiB    0.000 MiB         190               count = count
+    96   71.086 MiB    0.000 MiB         191           count_list.append(count)
+    97   71.086 MiB    0.000 MiB           1       index['A'] = count_list
+    98   71.086 MiB    0.000 MiB           1       del count_list
+    99
+   100                                         # counts for C
+   101   71.086 MiB    0.000 MiB           1       symbol = "C"
+   102   71.086 MiB    0.000 MiB           1       count = 0
+   103   71.086 MiB    0.000 MiB           1       count_list = []
+   104   71.086 MiB    0.000 MiB         192       for i in index['BWT']:
+   105   71.086 MiB    0.000 MiB         191           if i == symbol:
+   106   71.086 MiB    0.000 MiB           1               count +=1
+   107                                                 else:
+   108   71.086 MiB    0.000 MiB         190               count = count
+   109   71.086 MiB    0.000 MiB         191           count_list.append(count)
+   110   71.086 MiB    0.000 MiB           1       index['C'] = count_list 
+   111   71.086 MiB    0.000 MiB           1       del count_list
+   112
+   113                                             # counts for G
+   114   71.086 MiB    0.000 MiB           1       symbol = "G"
+   115   71.086 MiB    0.000 MiB           1       count = 0
+   116   71.086 MiB    0.000 MiB           1       count_list = []
+   117   71.086 MiB    0.000 MiB         192       for i in index['BWT']:
+   118   71.086 MiB    0.000 MiB         191           if i == symbol:
+   119   71.086 MiB    0.000 MiB           1               count +=1
+   120                                                 else:
+   121   71.086 MiB    0.000 MiB         190               count = count
+   122   71.086 MiB    0.000 MiB         191           count_list.append(count)
+   123   71.086 MiB    0.000 MiB           1       index['G'] = count_list
+   124   71.086 MiB    0.000 MiB           1       del count_list
+   125
+   126                                             # counts for T
+   127   71.086 MiB    0.000 MiB           1       symbol = "T"
+   128   71.086 MiB    0.000 MiB           1       count = 0
+   129   71.086 MiB    0.000 MiB           1       count_list = []
+   130   71.086 MiB    0.000 MiB         192       for i in index['BWT']:
+   131   71.086 MiB    0.000 MiB         191           if i == symbol:
+   132                                                     count +=1
+   133                                                 else:
+   134   71.086 MiB    0.000 MiB         191               count = count
+   135   71.086 MiB    0.000 MiB         191           count_list.append(count)
+   136   71.086 MiB    0.000 MiB           1       index['T'] = count_list
+   137   71.086 MiB    0.000 MiB           1       del count_list
+   138   71.086 MiB    0.000 MiB           1       return index
+
+
+Filename: gen_index_profile.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+   140   71.086 MiB   71.086 MiB           1   @profile
+   141                                         def k_length_seed(k, index):
+   142                                             """
+   143                                             Method to return k-length seed string without IP-BWT concatination
+   144                                             """
+   145   71.086 MiB    0.000 MiB           1       print("Generating k-length seeds")
+   146   71.086 MiB    0.000 MiB           1       k_length_seed_string = []
+   147   71.086 MiB    0.000 MiB           1       try:
+   148   71.086 MiB    0.000 MiB         192           for i in index['suffix_array']:
+   149   71.086 MiB    0.000 MiB         191               k_seed = i[:k]
+   150   71.086 MiB    0.000 MiB         191               k_length_seed_string.append(k_seed)
+   151                                             except:
+   152                                                 print("an error as occured generating the k-length seed from suffix array") # go into this possable type error a bit more
+   153
+   154   71.086 MiB    0.000 MiB           1       index['k-seed'] = k_length_seed_string
+   155   71.086 MiB    0.000 MiB           1       del k_length_seed_string
+   156   71.086 MiB    0.000 MiB           1       return index
+
+
+Filename: gen_index_profile.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+   158   71.086 MiB   71.086 MiB           1   @profile
+   159                                         def k_length_seed_extension(k, index):
+   160   71.086 MiB    0.000 MiB           1       k_length_seed_extension = []
+   161
+   162   71.086 MiB    0.000 MiB           1       try:
+   163   71.086 MiB    0.000 MiB         192           for i in index['suffix_array']:
+   164   71.086 MiB    0.000 MiB         191               end_point = k+k
+   165   71.086 MiB    0.000 MiB         191               k_extend = i[k:end_point]
+   166   71.086 MiB    0.000 MiB         191               k_length_seed_extension.append(k_extend)
+   167                                             except:
+   168                                                 print("an error has occured creating an extended full read length seed")
+   169
+   170   71.148 MiB    0.062 MiB           1       index['k-seed-extend'] = k_length_seed_extension
+   171   71.148 MiB    0.000 MiB           1       del k_length_seed_extension
+   172   71.148 MiB    0.000 MiB           1       return index
+
+
+Filename: gen_index_profile.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+   188   70.355 MiB   70.355 MiB           1   @profile
+   189                                         def generate_index(reference_genome, seed_length):
+   190                                             """
+   191                                             Class GenIndex() method call to read reference file and generate reference index.
+   192                                             """
+   193                                             # try:
+   194                                             #     with open(reference_genome, 'r') as seed:
+   195                                             #         seed = seed.read().rstrip()
+   196                                             # except:
+   197                                             #     print("please pass the reference file as console arg i.e. $ python gen_index.py my_file.txt")        
+   198                                             #     filename = str(input("enter the file dir and name: "))
+   199                                             #     try:
+   200                                             #         with open(filename, "r") as seed:
+   201                                             #             seed = seed.read().rstrip()
+   202                                             #     except FileNotFoundError:
+   203                                             #         print("No such file or directory")
+   204   70.355 MiB    0.000 MiB           1       seed = "$" + reference_genome #mod so will work with passed string sequence
+   205
+   206   70.438 MiB    0.082 MiB           1       index = pd.DataFrame()
+   207
+   208                                             # pass seed through rotations, suffix generation, BWT generation and FM index generation and k-seed generation
+   209   70.785 MiB   70.785 MiB           1       index = rotations(seed,index)
+   210   71.078 MiB   71.078 MiB           1       index = suffix_array(index)
+   211   71.078 MiB   71.078 MiB           1       index = first_last(index)
+   212   71.086 MiB   71.086 MiB           1       index = char_count(index)
+   213   71.086 MiB   71.086 MiB           1       index = k_length_seed(seed_length, index)
+   214
+   215                                             #full read mapping extension
+   216   71.148 MiB   71.148 MiB           1       index = k_length_seed_extension(seed_length, index)
+   217
+   218   71.148 MiB    0.000 MiB           1       try:
+   219   71.223 MiB    0.074 MiB           1           index.to_csv("data_sets/indexed_reference.csv", index = False)
+   220                                             except OSError:
+   221                                                 print("Cannot find data_sets directory, creating one...")
+   222                                                 os.makedirs('data_sets')
+   223                                                 index.to_csv("data_sets/indexed_reference.csv", index = False)
+   224   71.223 MiB    0.000 MiB           1       return index

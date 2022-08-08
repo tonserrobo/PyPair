@@ -1,0 +1,226 @@
+Timer unit: 1e-06 s
+
+Total time: 0.010235 s
+File: gen_index_profile.py
+Function: rotations at line 5
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     5                                           @profile
+     6                                           def rotations(s, index):
+     7                                               """
+     8                                               Rotate index string by 1
+     9                                               """
+    10         1        301.4    301.4      2.9      print("Making rotations")
+    11         1          2.3      2.3      0.0      rotations = []
+    12
+    13       192        178.1      0.9      1.7      for i in range(len(s)):
+    14       191        211.1      1.1      2.1          end_number = len(s)
+    15       191        546.7      2.9      5.3          status = round(((i/end_number)*100),2)
+    16                                                   #print (str(status) + "%") # clears the console too quick so it dosnt show anything
+    17       191        433.9      2.3      4.2          row = s[i:] + s[:i]
+    18       191        275.2      1.4      2.7          rotations.append(row)
+    19
+    20         1       6055.7   6055.7     59.2      index['pre_sorted'] = rotations
+    21         1          5.9      5.9      0.1      del rotations
+    22         1       2222.7   2222.7     21.7      index['org_location'] = index['pre_sorted'].index
+    23         1          2.0      2.0      0.0      return index
+
+Total time: 0.0062803 s
+File: gen_index_profile.py
+Function: suffix_array at line 25
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    25                                           @profile
+    26                                           def suffix_array(index):
+    27                                               """
+    28                                               method for building the suffix array from input reference
+    29                                               """
+    30         1        291.9    291.9      4.6      print("Building suffix array column")
+    31         1       1938.5   1938.5     30.9      index['suffix_array'] = index['pre_sorted']
+    32         1       2091.3   2091.3     33.3      index = index.sort_values(by=['suffix_array'])
+    33         1       1608.5   1608.5     25.6      index = index.drop(['pre_sorted'], axis = 1)
+    34         1        349.1    349.1      5.6      index = index.reset_index(drop=True)
+    35         1          1.0      1.0      0.0      return index
+
+Total time: 0.0049318 s
+File: gen_index_profile.py
+Function: first_last at line 37
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    37                                           @profile
+    38                                           def first_last(index):
+    39                                               """
+    40                                               method for building the first and last(BWT) column of the index file
+    41                                               """
+    42         1        514.4    514.4     10.4      print("Building BWT")
+    43         1          2.8      2.8      0.1      first = []
+    44         1          0.7      0.7      0.0      last = []
+    45
+    46       192        551.8      2.9     11.2      for row in index['suffix_array']:
+    47       191        193.7      1.0      3.9          f = row[:1]
+    48       191        198.2      1.0      4.0          first.append(f)
+    49         1       1461.4   1461.4     29.6      index['first'] = first
+    50         1          3.5      3.5      0.1      del first
+    51
+    52       192        347.6      1.8      7.0      for row in index['suffix_array']:
+    53       191        152.3      0.8      3.1          l = row[-1:]
+    54       191        163.4      0.9      3.3          last.append(l)
+    55         1       1339.6   1339.6     27.2      index['BWT'] = last
+    56         1          1.8      1.8      0.0      del last
+    57
+    58         1          0.6      0.6      0.0      return index
+
+Total time: 0.016835 s
+File: gen_index_profile.py
+Function: char_count at line 60
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    60                                           @profile
+    61                                           def char_count(index):
+    62                                               """
+    63                                               method for populating FM index char counts from BWT.
+    64                                               """
+    65         1        326.4    326.4      1.9      print("Populating FM index character counts")
+    66         1       2588.9   2588.9     15.4      index['$']=''
+    67         1       1630.1   1630.1      9.7      index['A']=''
+    68         1       1565.2   1565.2      9.3      index['C']=''
+    69         1       1394.0   1394.0      8.3      index['G']=''
+    70         1       1369.2   1369.2      8.1      index['T']=''
+    71
+    72                                               # counts for $
+    73         1          1.5      1.5      0.0      symbol = "$"
+    74         1          0.6      0.6      0.0      count = 0
+    75         1          0.7      0.7      0.0      count_list = []
+    76                                               # print("counting all $ symbols")
+    77
+    78       192        370.4      1.9      2.2      for i in index['BWT']:
+    79       191        129.6      0.7      0.8          if i == symbol:
+    80         1          0.8      0.8      0.0              count +=1
+    81                                                   else:
+    82       190        110.6      0.6      0.7              count = count
+    83       191        159.6      0.8      0.9          count_list.append(count)
+    84         1       1134.5   1134.5      6.7      index['$'] = count_list
+    85         1          5.7      5.7      0.0      del count_list
+    86
+    87                                               # counts for A
+    88         1          1.8      1.8      0.0      symbol = "A"
+    89         1          1.9      1.9      0.0      count = 0
+    90         1          2.7      2.7      0.0      count_list = []
+    91       192        645.1      3.4      3.8      for i in index['BWT']:
+    92       191        190.4      1.0      1.1          if i == symbol:
+    93         1          1.5      1.5      0.0              count +=1
+    94                                                   else:
+    95       190        158.9      0.8      0.9              count = count
+    96       191        232.6      1.2      1.4          count_list.append(count)
+    97         1        812.4    812.4      4.8      index['A'] = count_list
+    98         1          2.5      2.5      0.0      del count_list
+    99
+   100                                           # counts for C
+   101         1          0.8      0.8      0.0      symbol = "C"
+   102         1          0.7      0.7      0.0      count = 0
+   103         1          0.8      0.8      0.0      count_list = []
+   104       192        320.8      1.7      1.9      for i in index['BWT']:
+   105       191        129.2      0.7      0.8          if i == symbol:
+   106         1          0.8      0.8      0.0              count +=1
+   107                                                   else:
+   108       190        110.1      0.6      0.7              count = count
+   109       191        153.9      0.8      0.9          count_list.append(count)
+   110         1        529.2    529.2      3.1      index['C'] = count_list
+   111         1          1.6      1.6      0.0      del count_list
+   112
+   113                                               # counts for G
+   114         1          0.6      0.6      0.0      symbol = "G"
+   115         1          0.5      0.5      0.0      count = 0
+   116         1          0.6      0.6      0.0      count_list = []
+   117       192        263.8      1.4      1.6      for i in index['BWT']:
+   118       191        134.6      0.7      0.8          if i == symbol:
+   119         1          0.8      0.8      0.0              count +=1
+   120                                                   else:
+   121       190        107.4      0.6      0.6              count = count
+   122       191        150.8      0.8      0.9          count_list.append(count)
+   123         1        543.4    543.4      3.2      index['G'] = count_list
+   124         1          2.4      2.4      0.0      del count_list
+   125
+   126                                               # counts for T
+   127         1          0.6      0.6      0.0      symbol = "T"
+   128         1          0.6      0.6      0.0      count = 0
+   129         1          0.6      0.6      0.0      count_list = []
+   130       192        317.9      1.7      1.9      for i in index['BWT']:
+   131       191        137.5      0.7      0.8          if i == symbol:
+   132                                                       count +=1
+   133                                                   else:
+   134       191        112.8      0.6      0.7              count = count
+   135       191        161.4      0.8      1.0          count_list.append(count)
+   136         1        808.9    808.9      4.8      index['T'] = count_list
+   137         1          3.7      3.7      0.0      del count_list
+   138         1          0.6      0.6      0.0      return index
+
+Total time: 0.0035087 s
+File: gen_index_profile.py
+Function: k_length_seed at line 140
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   140                                           @profile
+   141                                           def k_length_seed(k, index):
+   142                                               """
+   143                                               Method to return k-length seed string without IP-BWT concatination
+   144                                               """
+   145         1        335.1    335.1      9.6      print("Generating k-length seeds")
+   146         1          3.8      3.8      0.1      k_length_seed_string = []
+   147         1          1.3      1.3      0.0      try:
+   148       192        566.4      2.9     16.1          for i in index['suffix_array']:
+   149       191        247.6      1.3      7.1              k_seed = i[:k]
+   150       191        235.5      1.2      6.7              k_length_seed_string.append(k_seed)
+   151                                               except:
+   152                                                   print("an error as occured generating the k-length seed from suffix array") # go into this possable type error a bit more
+   153
+   154         1       2112.9   2112.9     60.2      index['k-seed'] = k_length_seed_string
+   155         1          5.1      5.1      0.1      del k_length_seed_string
+   156         1          1.0      1.0      0.0      return index
+
+Total time: 0.0030587 s
+File: gen_index_profile.py
+Function: k_length_seed_extension at line 158
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   158                                           @profile
+   159                                           def k_length_seed_extension(k, index):
+   160         1          1.1      1.1      0.0      k_length_seed_extension = []
+   161
+   162         1          1.0      1.0      0.0      try:
+   163       192        538.1      2.8     17.6          for i in index['suffix_array']:
+   164       191        160.1      0.8      5.2              end_point = k+k
+   165       191        220.0      1.2      7.2              k_extend = i[k:end_point]
+   166       191        218.7      1.1      7.2              k_length_seed_extension.append(k_extend)
+   167                                               except:
+   168                                                   print("an error has occured creating an extended full read length seed")
+   169
+   170         1       1914.9   1914.9     62.6      index['k-seed-extend'] = k_length_seed_extension
+   171         1          3.9      3.9      0.1      del k_length_seed_extension
+   172         1          0.9      0.9      0.0      return index
+
+Total time: 0.0625813 s
+File: gen_index_profile.py
+Function: generate_index at line 188
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   188                                           @profile
+   189                                           def generate_index(reference_genome, seed_length):
+   190                                               """
+   215                                               #full read mapping extension
+   216         1       3504.8   3504.8      5.6      index = k_length_seed_extension(seed_length, index)
+   217
+   218         1          1.1      1.1      0.0      try:
+   219         1      11796.1  11796.1     18.8          index.to_csv("data_sets/indexed_reference.csv", index = False)
+   220                                               except OSError:
+   221                                                   print("Cannot find data_sets directory, creating one...")
+   222                                                   os.makedirs('data_sets')
+   223                                                   index.to_csv("data_sets/indexed_reference.csv", index = False)
+   224         1          2.2      2.2      0.0      return index

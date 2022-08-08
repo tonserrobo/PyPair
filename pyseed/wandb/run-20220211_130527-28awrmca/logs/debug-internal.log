@@ -1,0 +1,159 @@
+2022-02-11 13:05:30,805 INFO    MainThread:300 [internal.py:wandb_internal():89] W&B internal server running at pid: 300, started at: 2022-02-11 13:05:30.805311
+2022-02-11 13:05:30,822 DEBUG   SenderThread:300 [sender.py:send():235] send: header
+2022-02-11 13:05:30,822 INFO    WriterThread:300 [datastore.py:open_for_write():77] open: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\run-28awrmca.wandb
+2022-02-11 13:05:30,822 DEBUG   HandlerThread:300 [handler.py:handle_request():131] handle_request: check_version
+2022-02-11 13:05:30,824 DEBUG   SenderThread:300 [sender.py:send_request():249] send_request: check_version
+2022-02-11 13:05:31,058 DEBUG   SenderThread:300 [sender.py:send():235] send: run
+2022-02-11 13:05:31,361 DEBUG   HandlerThread:300 [handler.py:handle_request():131] handle_request: run_start
+2022-02-11 13:05:31,399 INFO    SenderThread:300 [dir_watcher.py:__init__():169] watching files in: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files
+2022-02-11 13:05:31,399 INFO    SenderThread:300 [sender.py:_start_run_threads():809] run started: 28awrmca with start time 1644584728
+2022-02-11 13:05:31,399 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:05:31,401 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:05:31,423 DEBUG   HandlerThread:300 [meta.py:__init__():36] meta init
+2022-02-11 13:05:31,424 DEBUG   HandlerThread:300 [meta.py:__init__():50] meta init done
+2022-02-11 13:05:31,436 DEBUG   HandlerThread:300 [meta.py:probe():210] probe
+2022-02-11 13:05:31,448 DEBUG   HandlerThread:300 [meta.py:_setup_git():200] setup git
+2022-02-11 13:05:31,835 DEBUG   HandlerThread:300 [meta.py:_setup_git():207] setup git done
+2022-02-11 13:05:31,835 DEBUG   HandlerThread:300 [meta.py:_save_pip():54] save pip
+2022-02-11 13:05:31,837 DEBUG   HandlerThread:300 [meta.py:_save_pip():68] save pip done
+2022-02-11 13:05:31,837 DEBUG   HandlerThread:300 [meta.py:probe():248] probe done
+2022-02-11 13:05:31,900 DEBUG   SenderThread:300 [sender.py:send():235] send: files
+2022-02-11 13:05:31,901 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-metadata.json with policy now
+2022-02-11 13:05:31,936 DEBUG   HandlerThread:300 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-11 13:05:31,936 DEBUG   SenderThread:300 [sender.py:send_request():249] send_request: stop_status
+2022-02-11 13:05:32,420 INFO    Thread-12 :300 [dir_watcher.py:_on_file_created():217] file/dir created: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:05:32,420 INFO    Thread-12 :300 [dir_watcher.py:_on_file_created():217] file/dir created: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\requirements.txt
+2022-02-11 13:05:32,421 INFO    Thread-12 :300 [dir_watcher.py:_on_file_created():217] file/dir created: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:05:32,422 INFO    Thread-12 :300 [dir_watcher.py:_on_file_created():217] file/dir created: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-metadata.json
+2022-02-11 13:05:32,771 INFO    Thread-17 :300 [upload_job.py:push():137] Uploaded file C:\Users\B00460~1\AppData\Local\Temp\tmp1h37wxoqwandb\3g0ibt8f-wandb-metadata.json
+2022-02-11 13:05:34,436 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:05:37,663 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:05:37,663 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:05:37,668 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:05:38,476 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:05:40,509 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:05:42,535 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:05:44,940 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:05:44,941 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:05:44,943 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:05:45,565 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:05:46,571 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:05:47,271 DEBUG   HandlerThread:300 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-11 13:05:47,271 DEBUG   SenderThread:300 [sender.py:send_request():249] send_request: stop_status
+2022-02-11 13:05:48,590 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:05:49,593 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:05:52,301 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:05:52,302 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:05:52,306 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:05:52,621 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:05:54,645 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:05:56,679 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:05:57,683 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:05:58,826 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:05:58,826 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:05:58,828 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:05:59,708 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:06:01,729 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:02,096 DEBUG   SenderThread:300 [sender.py:send():235] send: stats
+2022-02-11 13:06:02,737 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:03,236 DEBUG   HandlerThread:300 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-11 13:06:03,237 DEBUG   SenderThread:300 [sender.py:send_request():249] send_request: stop_status
+2022-02-11 13:06:03,755 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:05,931 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:06:05,932 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:06:05,935 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:06:06,777 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:06:07,785 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:09,815 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:10,821 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:12,922 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:06:12,923 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:06:12,925 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:06:13,856 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:06:16,902 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:18,588 DEBUG   HandlerThread:300 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-11 13:06:18,589 DEBUG   SenderThread:300 [sender.py:send_request():249] send_request: stop_status
+2022-02-11 13:06:19,579 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:06:19,579 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:06:19,604 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:06:19,935 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:06:22,960 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:26,046 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:06:26,046 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:06:26,047 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:06:27,007 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:06:29,032 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:33,685 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:06:33,686 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:06:33,688 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:06:33,856 DEBUG   HandlerThread:300 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-11 13:06:33,856 DEBUG   SenderThread:300 [sender.py:send_request():249] send_request: stop_status
+2022-02-11 13:06:34,083 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:06:35,042 DEBUG   SenderThread:300 [sender.py:send():235] send: stats
+2022-02-11 13:06:37,113 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:38,116 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:40,583 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:06:40,583 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:06:40,585 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:06:41,142 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:06:44,280 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:45,320 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:46,329 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:47,932 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:06:47,933 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:06:47,936 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:06:48,347 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:06:49,235 DEBUG   HandlerThread:300 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-11 13:06:49,235 DEBUG   SenderThread:300 [sender.py:send_request():249] send_request: stop_status
+2022-02-11 13:06:50,369 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:51,405 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:52,429 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:54,055 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:06:54,056 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:06:54,058 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:06:54,456 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:06:56,475 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:57,519 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:06:58,533 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:00,437 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:07:00,438 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:07:00,440 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:07:00,570 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:07:02,575 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:03,607 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:04,554 DEBUG   HandlerThread:300 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-11 13:07:04,555 DEBUG   SenderThread:300 [sender.py:send_request():249] send_request: stop_status
+2022-02-11 13:07:05,646 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:06,391 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:07:06,392 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:07:06,400 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:07:06,666 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:07:07,833 DEBUG   SenderThread:300 [sender.py:send():235] send: stats
+2022-02-11 13:07:09,704 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:12,224 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:07:12,224 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:07:14,387 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:07:14,388 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:14,388 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:07:15,401 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:17,501 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:07:17,502 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:07:17,511 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:07:18,437 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:07:19,440 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:19,820 DEBUG   HandlerThread:300 [handler.py:handle_request():131] handle_request: stop_status
+2022-02-11 13:07:19,821 DEBUG   SenderThread:300 [sender.py:send_request():249] send_request: stop_status
+2022-02-11 13:07:21,461 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:22,471 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:23,651 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:07:23,651 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:07:23,658 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:07:24,497 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:07:26,523 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:27,541 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:28,560 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log
+2022-02-11 13:07:29,922 DEBUG   SenderThread:300 [sender.py:send():235] send: history
+2022-02-11 13:07:29,922 DEBUG   SenderThread:300 [sender.py:send():235] send: summary
+2022-02-11 13:07:29,925 INFO    SenderThread:300 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-02-11 13:07:30,575 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\wandb-summary.json
+2022-02-11 13:07:32,608 INFO    Thread-12 :300 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation\wandb\run-20220211_130527-28awrmca\files\output.log

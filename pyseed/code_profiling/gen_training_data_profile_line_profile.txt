@@ -1,0 +1,177 @@
+Timer unit: 1e-06 s
+
+Total time: 0.0201405 s
+File: gen_training_data_profile.py
+Function: generate_labeled_training_data at line 5
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     5                                           @profile
+     6                                           def generate_labeled_training_data(training_data, repetitions):
+     7                                                   '''
+     8                                                   Generate training data based on repeating the number of occurances of k-seed and its assocated org_location.
+     9                                                   '''
+    10         1          1.1      1.1      0.0          seed = []
+    11         1          0.7      0.7      0.0          label = []
+    12
+    13         5          8.2      1.6      0.0          for i in range(0,repetitions):
+    14       768       4996.8      6.5     24.8              for i in training_data['k-seed']:
+    15       764       1074.5      1.4      5.3                  seed.append(i)
+    16       768       1457.6      1.9      7.2              for i in training_data['org_location']:
+    17       764       1061.1      1.4      5.3                  label.append(i)
+    18
+    19         1       2690.7   2690.7     13.4          data = pd.DataFrame()
+    20         1       6835.8   6835.8     33.9          data['k-seed'] = seed
+    21         1       2005.4   2005.4     10.0          data['position_label'] = label
+    22         1          5.1      5.1      0.0          del seed
+    23         1          2.8      2.8      0.0          del label
+    24         1          0.7      0.7      0.0          return data
+
+Total time: 0.0081759 s
+File: gen_training_data_profile.py
+Function: generate_training_data_full_read_map at line 26
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    26                                           @profile
+    27                                           def generate_training_data_full_read_map(training_data, repetitions):
+    28                                               '''
+    29                                               Generate training data based on repeating the number of occurances of k-seed and its assocated org_location.
+    30                                               '''
+    31         1          0.9      0.9      0.0      seed = []
+    32
+    33         5          8.1      1.6      0.1      for i in range(0,repetitions):
+    34       768       1265.8      1.6     15.5          for i in training_data['k-seed-extend']:
+    35       764        959.7      1.3     11.7              seed.append(i)
+    36
+    37         1       2299.1   2299.1     28.1      data = pd.DataFrame()
+    38         1       3636.6   3636.6     44.5      data['k-seed-extend'] = seed
+    39         1          5.0      5.0      0.1      del seed
+    40         1          0.7      0.7      0.0      return data
+
+Total time: 0 s
+File: gen_training_data_profile.py
+Function: generate_training_data_2 at line 42
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    42                                           @profile
+    43                                           def generate_training_data_2(training_data, repetitions):
+    44                                               """
+    45                                               Simplified version of generate training data, in which the entire set is repeated in a single instance
+    46                                               - this method will become the defult for batch processing
+    47                                               """
+    48                                               data = []
+    49                                               temp_range = len(training_data)
+    50                                               batch_size = 5000 #this should prob be passed via main as part of the main options
+    51                                               total_data_size = len(training_data)
+    52                                               number_of_batches = round(total_data_size/batch_size)
+    53
+    54                                               for i in range(0, repetitions):
+    55                                                   data_temp = training_data[0:temp_range]
+    56                                                   data.append(data_temp)
+    57
+    58                                               comp_data = pd.DataFrame(data)
+    59                                               return comp_data
+
+Total time: 0.0052169 s
+File: gen_training_data_profile.py
+Function: reverse_k_seed_string at line 61
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    61                                           @profile
+    62                                           def reverse_k_seed_string(training_data):
+    63                                               """
+    64                                               Method to reverse k-seed string and include within training set as additional feature
+    65                                               """
+    66         1          0.9      0.9      0.0      data = []
+    67       765       1197.6      1.6     23.0      for i in training_data['k-seed']:
+    68       764       1022.8      1.3     19.6          rev_seed = i[::-1]
+    69       764        940.5      1.2     18.0          data.append(rev_seed)
+    70
+    71         1       2048.2   2048.2     39.3      training_data['rev_k-seed'] = data
+    72         1          6.1      6.1      0.1      del data
+    73         1          0.8      0.8      0.0      return training_data
+
+Total time: 0.0047858 s
+File: gen_training_data_profile.py
+Function: reverse_k_seed_string_full_map at line 75
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    75                                           @profile
+    76                                           def reverse_k_seed_string_full_map(training_data):
+    77                                               """
+    78                                               Method to reverse k-seed string and include within training set as additional feature
+    79                                               """
+    80         1          1.3      1.3      0.0      data = []
+    81       765        974.0      1.3     20.4      for i in training_data['k-seed-extend']:
+    82       764        873.1      1.1     18.2          rev_seed = i[::-1]
+    83       764        785.0      1.0     16.4          data.append(rev_seed)
+    84
+    85         1       2144.0   2144.0     44.8      training_data['rev_k-seed-extend'] = data
+    86         1          7.7      7.7      0.2      del data
+    87         1          0.7      0.7      0.0      return training_data
+
+Total time: 0.112603 s
+File: gen_training_data_profile.py
+Function: generate_training_data at line 92
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    92                                           @profile
+    93                                           def generate_training_data(reference_genome, training_iterations):
+    94                                               """
+    95                                               Function call to GenTraining() class for training data generation. The action of generating training data will change the training
+    96                                               flag to True, causing the model to retrain for the given training set. 
+    97                                               """
+    98                                               # Read/Generate reference index file
+    99         1          1.1      1.1      0.0      try:
+   100         1      27127.5  27127.5     24.1          index = pd.read_csv("data_sets/indexed_reference.csv")
+   101                                               except FileNotFoundError:
+   102                                                   print("indexed_reference.csv file not found") #not calling index gen from here
+   103                                                   #index = generate_index(reference_genome)
+   104
+   105         1          3.5      3.5      0.0      encoder_decoder = Encode_decode()
+   106
+   107                                               # Generate and encode foward training data
+   108         1      22646.7  22646.7     20.1      training_set = generate_labeled_training_data(index, training_iterations)
+   109         1        358.0    358.0      0.3      training_k_seeds = list(training_set['k-seed'])
+   110         1       5754.2   5754.2      5.1      training_set['k-seed'] = encoder_decoder.encode(training_k_seeds) # 2bit encoding
+   111
+   112                                               # Generate and encode reverse seed string
+   113         1       6772.6   6772.6      6.0      training_set = reverse_k_seed_string(training_set)
+   114         1        381.1    381.1      0.3      training_k_seeds_rev = list(training_set['rev_k-seed'])
+   115         1       4678.8   4678.8      4.2      training_set['rev_k-seed'] = encoder_decoder.encode(training_k_seeds_rev)
+   116
+   117                                               #for full read mapping - fwd
+   118         1       9243.9   9243.9      8.2      training_set_full_map_fwd = generate_training_data_full_read_map(index, training_iterations)   
+   119         1        363.0    363.0      0.3      training_k_seeds_extend_fwd = list(training_set_full_map_fwd['k-seed-extend'])
+   120         1       6178.1   6178.1      5.5      training_set['k-seed-extend'] = encoder_decoder.encode(training_k_seeds_extend_fwd) # 2bit encoding
+   121
+   122                                               #for full read mapping - rev
+   123         1       6217.7   6217.7      5.5      training_set_full_map_rev = reverse_k_seed_string_full_map(training_set)
+   124         1        401.4    401.4      0.4      training_k_seeds_extend_rev = list(training_set_full_map_rev['rev_k-seed-extend'])
+   125         1       4740.1   4740.1      4.2      training_set['rev_k-seed-extend'] = encoder_decoder.encode(training_k_seeds_extend_rev)        
+   126         1          1.9      1.9      0.0      try:
+   127         1      17729.8  17729.8     15.7          training_set.to_csv("data_sets/training_data.csv", index = False)
+   128                                               except OSError:
+   129                                                   print("Cannot find data_sets directory, creating one...")
+   130                                                   os.makedirs('data_sets')
+   131                                                   training_set.to_csv("data_sets/training_data.csv", index = False)
+   132
+   133         1          2.7      2.7      0.0      training_flag = True
+   134         1          1.4      1.4      0.0      return training_flag, training_set
+
+Total time: 0.1128 s
+File: gen_training_data_profile.py
+Function: main at line 136
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   136                                           @profile
+   137                                           def main():
+   138         1          2.0      2.0      0.0      training_iterations = 4
+   139         1          1.2      1.2      0.0      reference_genome_file = r"C:\Users\tonyr\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation_2\code_profiling\5000bp_ref.txt"
+   140         1     112796.5 112796.5    100.0      training_flag, training_data = generate_training_data(reference_genome_file, training_iterations)
