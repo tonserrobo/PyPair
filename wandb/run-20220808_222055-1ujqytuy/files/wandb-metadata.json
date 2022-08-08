@@ -1,0 +1,22 @@
+{
+    "os": "Windows-10-10.0.19042-SP0",
+    "python": "3.10.6",
+    "heartbeatAt": "2022-08-08T21:20:58.817540",
+    "startedAt": "2022-08-08T21:20:55.583887",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "c:\\Users\\B00460204\\OneDrive - Ulster University\\Phd - FPGA acceleration in genomics\\Publications + Writing\\PhD_reports\\PhD Thesis\\cp3. Seed generation via ML\\research\\pyseed\\main.py",
+    "codePath": "pyseed\\main.py",
+    "git": {
+        "remote": null,
+        "commit": "6bd4b0a0486e14380ea54fc1bcb98e0071f7bd5e"
+    },
+    "email": "45736383+tonserrobo@users.noreply.github.com",
+    "root": "C:/Users/B00460204/OneDrive - Ulster University/Phd - FPGA acceleration in genomics/Publications + Writing/PhD_reports/PhD Thesis/cp3. Seed generation via ML/research",
+    "host": "FHZYMG3",
+    "username": "B00460204",
+    "executable": "C:\\Users\\B00460204\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe"
+}

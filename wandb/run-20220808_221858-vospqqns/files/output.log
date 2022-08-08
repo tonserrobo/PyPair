@@ -1,0 +1,8 @@
+
+Training Set Score : 46.96030396960304 %
+Test Set Score : 5.839416058394161 %
+Val Set Score : 5.8500000000000005 %
+Accuracy for the fold no. 0 on the test set: 0.28314337132573486
+Accuracy for the fold no. 1 on the test set: 0.2981403719256149
+Accuracy for the fold no. 2 on the test set: 0.3051305130513051
+Accuracy: 0.295 (0.009)
