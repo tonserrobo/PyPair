@@ -384,3 +384,227 @@
 2022-08-08 22:57:27,660 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
 2022-08-08 22:57:43,023 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
 2022-08-08 22:57:43,023 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 22:57:58,379 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 22:57:58,379 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 22:57:59,327 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 22:58:13,736 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 22:58:13,736 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 22:58:29,072 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 22:58:29,072 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 22:58:32,358 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 22:58:44,346 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 22:58:44,347 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 22:58:59,613 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 22:58:59,613 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 22:59:05,368 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 22:59:14,969 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 22:59:14,969 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 22:59:30,330 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 22:59:30,331 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 22:59:38,118 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 22:59:45,601 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 22:59:45,602 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:00:01,001 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:00:01,001 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:00:10,966 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:00:16,309 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:00:16,310 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:00:31,570 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:00:31,570 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:00:43,636 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:00:46,846 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:00:46,846 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:01:02,188 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:01:02,190 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:01:16,387 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:01:17,548 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:01:17,548 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:01:32,912 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:01:32,913 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:01:48,170 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:01:48,170 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:01:49,298 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:02:03,528 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:02:03,528 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:02:18,775 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:02:18,775 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:02:22,327 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:02:34,044 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:02:34,044 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:02:49,422 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:02:49,422 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:02:55,574 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:03:04,755 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:03:04,755 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:03:20,017 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:03:20,017 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:03:28,557 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:03:35,297 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:03:35,297 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:03:50,642 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:03:50,642 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:04:01,552 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:04:06,009 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:04:06,013 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:04:21,358 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:04:21,359 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:04:34,620 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:04:36,610 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:04:36,610 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:04:45,337 INFO    Thread-12 :10364 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\output.log
+2022-08-08 23:04:51,899 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:04:51,900 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:05:07,606 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:05:07,606 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:05:07,880 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:05:09,580 INFO    Thread-12 :10364 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\output.log
+2022-08-08 23:05:23,230 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:05:23,230 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:05:25,708 INFO    Thread-12 :10364 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\output.log
+2022-08-08 23:05:38,569 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:05:38,569 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:05:40,695 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:05:51,920 INFO    Thread-12 :10364 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\output.log
+2022-08-08 23:05:53,820 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:05:53,820 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:06:09,190 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:06:09,190 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:06:13,545 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:06:24,449 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: stop_status
+2022-08-08 23:06:24,449 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: stop_status
+2022-08-08 23:06:39,524 DEBUG   SenderThread:10364 [sender.py:send():235] send: history
+2022-08-08 23:06:39,524 DEBUG   SenderThread:10364 [sender.py:send():235] send: summary
+2022-08-08 23:06:39,550 INFO    SenderThread:10364 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-08-08 23:06:39,619 INFO    Thread-12 :10364 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\wandb-summary.json
+2022-08-08 23:06:39,671 DEBUG   SenderThread:10364 [sender.py:send():235] send: history
+2022-08-08 23:06:39,672 DEBUG   SenderThread:10364 [sender.py:send():235] send: summary
+2022-08-08 23:06:39,687 INFO    SenderThread:10364 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-08-08 23:06:39,760 DEBUG   SenderThread:10364 [sender.py:send():235] send: telemetry
+2022-08-08 23:06:39,761 DEBUG   SenderThread:10364 [sender.py:send():235] send: exit
+2022-08-08 23:06:39,780 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:39,761 INFO    SenderThread:10364 [sender.py:send_exit():371] handling exit code: 0
+2022-08-08 23:06:39,780 INFO    SenderThread:10364 [sender.py:send_exit():373] handling runtime: 2740
+2022-08-08 23:06:39,793 INFO    SenderThread:10364 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-08-08 23:06:39,794 INFO    SenderThread:10364 [sender.py:send_exit():379] send defer
+2022-08-08 23:06:39,798 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:39,803 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: defer
+2022-08-08 23:06:39,805 INFO    HandlerThread:10364 [handler.py:handle_request_defer():154] handle defer: 0
+2022-08-08 23:06:39,805 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: defer
+2022-08-08 23:06:39,806 INFO    SenderThread:10364 [sender.py:send_request_defer():388] handle sender defer: 0
+2022-08-08 23:06:39,806 INFO    SenderThread:10364 [sender.py:transition_state():392] send defer: 1
+2022-08-08 23:06:39,807 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: defer
+2022-08-08 23:06:39,807 INFO    HandlerThread:10364 [handler.py:handle_request_defer():154] handle defer: 1
+2022-08-08 23:06:39,928 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: defer
+2022-08-08 23:06:39,928 INFO    SenderThread:10364 [sender.py:send_request_defer():388] handle sender defer: 1
+2022-08-08 23:06:39,929 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:39,929 INFO    SenderThread:10364 [sender.py:transition_state():392] send defer: 2
+2022-08-08 23:06:39,930 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:39,931 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: defer
+2022-08-08 23:06:39,932 INFO    HandlerThread:10364 [handler.py:handle_request_defer():154] handle defer: 2
+2022-08-08 23:06:39,934 DEBUG   SenderThread:10364 [sender.py:send():235] send: stats
+2022-08-08 23:06:39,935 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: defer
+2022-08-08 23:06:39,935 INFO    SenderThread:10364 [sender.py:send_request_defer():388] handle sender defer: 2
+2022-08-08 23:06:39,935 INFO    SenderThread:10364 [sender.py:transition_state():392] send defer: 3
+2022-08-08 23:06:39,936 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: defer
+2022-08-08 23:06:39,936 INFO    HandlerThread:10364 [handler.py:handle_request_defer():154] handle defer: 3
+2022-08-08 23:06:39,940 DEBUG   SenderThread:10364 [sender.py:send():235] send: summary
+2022-08-08 23:06:39,964 INFO    SenderThread:10364 [sender.py:_save_file():944] saving file wandb-summary.json with policy end
+2022-08-08 23:06:39,964 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: defer
+2022-08-08 23:06:39,965 INFO    SenderThread:10364 [sender.py:send_request_defer():388] handle sender defer: 3
+2022-08-08 23:06:39,965 INFO    SenderThread:10364 [sender.py:transition_state():392] send defer: 4
+2022-08-08 23:06:39,966 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: defer
+2022-08-08 23:06:39,966 INFO    HandlerThread:10364 [handler.py:handle_request_defer():154] handle defer: 4
+2022-08-08 23:06:39,966 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: defer
+2022-08-08 23:06:39,966 INFO    SenderThread:10364 [sender.py:send_request_defer():388] handle sender defer: 4
+2022-08-08 23:06:40,040 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:40,387 INFO    SenderThread:10364 [sender.py:transition_state():392] send defer: 5
+2022-08-08 23:06:40,387 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:40,389 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: defer
+2022-08-08 23:06:40,389 INFO    HandlerThread:10364 [handler.py:handle_request_defer():154] handle defer: 5
+2022-08-08 23:06:40,389 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: defer
+2022-08-08 23:06:40,390 INFO    SenderThread:10364 [sender.py:send_request_defer():388] handle sender defer: 5
+2022-08-08 23:06:40,390 INFO    SenderThread:10364 [dir_watcher.py:finish():283] shutting down directory watcher
+2022-08-08 23:06:40,503 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:40,631 INFO    SenderThread:10364 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\output.log
+2022-08-08 23:06:40,631 INFO    SenderThread:10364 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\wandb-summary.json
+2022-08-08 23:06:40,631 INFO    SenderThread:10364 [dir_watcher.py:_on_file_modified():230] file/dir modified: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\config.yaml
+2022-08-08 23:06:40,635 INFO    SenderThread:10364 [dir_watcher.py:finish():313] scan: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files
+2022-08-08 23:06:40,636 INFO    SenderThread:10364 [dir_watcher.py:finish():327] scan save: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\config.yaml config.yaml
+2022-08-08 23:06:40,636 INFO    SenderThread:10364 [dir_watcher.py:finish():327] scan save: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\output.log output.log
+2022-08-08 23:06:40,638 INFO    SenderThread:10364 [dir_watcher.py:finish():327] scan save: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\requirements.txt requirements.txt
+2022-08-08 23:06:40,642 INFO    SenderThread:10364 [dir_watcher.py:finish():327] scan save: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\wandb-metadata.json wandb-metadata.json
+2022-08-08 23:06:40,645 INFO    SenderThread:10364 [dir_watcher.py:finish():327] scan save: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\wandb-summary.json wandb-summary.json
+2022-08-08 23:06:40,653 INFO    SenderThread:10364 [sender.py:transition_state():392] send defer: 6
+2022-08-08 23:06:40,658 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:40,661 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: defer
+2022-08-08 23:06:40,661 INFO    HandlerThread:10364 [handler.py:handle_request_defer():154] handle defer: 6
+2022-08-08 23:06:40,665 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: defer
+2022-08-08 23:06:40,665 INFO    SenderThread:10364 [sender.py:send_request_defer():388] handle sender defer: 6
+2022-08-08 23:06:40,666 INFO    SenderThread:10364 [file_pusher.py:finish():177] shutting down file pusher
+2022-08-08 23:06:40,781 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:40,781 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:40,902 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:40,903 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:41,009 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:41,009 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:41,129 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:41,129 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:41,244 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:41,244 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:41,348 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:41,348 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:41,461 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:41,461 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:41,490 INFO    Thread-18 :10364 [upload_job.py:push():137] Uploaded file C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\config.yaml
+2022-08-08 23:06:41,490 INFO    Thread-20 :10364 [upload_job.py:push():137] Uploaded file C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\requirements.txt
+2022-08-08 23:06:41,498 INFO    Thread-19 :10364 [upload_job.py:push():137] Uploaded file C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\output.log
+2022-08-08 23:06:41,570 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:41,570 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:41,683 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:41,685 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:41,796 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:41,797 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:41,908 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:41,909 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:42,021 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:42,021 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:42,133 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:42,134 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:42,240 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:42,240 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:42,280 INFO    Thread-21 :10364 [upload_job.py:push():137] Uploaded file C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\files\wandb-summary.json
+2022-08-08 23:06:42,353 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:42,353 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:42,460 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:42,461 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:42,490 INFO    Thread-11 (_thread_body):10364 [sender.py:transition_state():392] send defer: 7
+2022-08-08 23:06:42,491 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: defer
+2022-08-08 23:06:42,491 INFO    HandlerThread:10364 [handler.py:handle_request_defer():154] handle defer: 7
+2022-08-08 23:06:42,491 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: defer
+2022-08-08 23:06:42,492 INFO    SenderThread:10364 [sender.py:send_request_defer():388] handle sender defer: 7
+2022-08-08 23:06:42,575 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:43,836 INFO    SenderThread:10364 [sender.py:transition_state():392] send defer: 8
+2022-08-08 23:06:43,836 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:43,836 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: defer
+2022-08-08 23:06:43,836 INFO    HandlerThread:10364 [handler.py:handle_request_defer():154] handle defer: 8
+2022-08-08 23:06:43,836 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: defer
+2022-08-08 23:06:43,836 INFO    SenderThread:10364 [sender.py:send_request_defer():388] handle sender defer: 8
+2022-08-08 23:06:43,836 INFO    SenderThread:10364 [sender.py:transition_state():392] send defer: 9
+2022-08-08 23:06:43,836 DEBUG   SenderThread:10364 [sender.py:send():235] send: final
+2022-08-08 23:06:43,843 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: defer
+2022-08-08 23:06:43,844 DEBUG   SenderThread:10364 [sender.py:send():235] send: footer
+2022-08-08 23:06:43,844 INFO    HandlerThread:10364 [handler.py:handle_request_defer():154] handle defer: 9
+2022-08-08 23:06:43,844 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: defer
+2022-08-08 23:06:43,844 INFO    SenderThread:10364 [sender.py:send_request_defer():388] handle sender defer: 9
+2022-08-08 23:06:43,949 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: poll_exit
+2022-08-08 23:06:43,949 DEBUG   SenderThread:10364 [sender.py:send_request():249] send_request: poll_exit
+2022-08-08 23:06:43,949 INFO    SenderThread:10364 [file_pusher.py:join():182] waiting for file pusher
+2022-08-08 23:06:44,564 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: get_summary
+2022-08-08 23:06:44,566 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: sampled_history
+2022-08-08 23:06:44,574 DEBUG   HandlerThread:10364 [handler.py:handle_request():131] handle_request: shutdown
+2022-08-08 23:06:44,574 INFO    HandlerThread:10364 [handler.py:finish():739] shutting down handler
+2022-08-08 23:06:44,845 INFO    WriterThread:10364 [datastore.py:close():281] close: C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\Publications + Writing\PhD_reports\PhD Thesis\cp3. Seed generation via ML\research\wandb\run-20220808_222055-1ujqytuy\run-1ujqytuy.wandb
+2022-08-08 23:06:45,569 INFO    SenderThread:10364 [sender.py:finish():1075] shutting down sender
+2022-08-08 23:06:45,569 INFO    SenderThread:10364 [file_pusher.py:finish():177] shutting down file pusher
+2022-08-08 23:06:45,569 INFO    SenderThread:10364 [file_pusher.py:join():182] waiting for file pusher
+2022-08-08 23:06:45,596 INFO    MainThread:10364 [internal.py:handle_exit():79] Internal process exited

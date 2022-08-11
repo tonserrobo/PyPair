@@ -45,8 +45,8 @@ class IO_processing:
     def save_model_weights(self, model, input_file):
         '''Function to save model training weights as .pkl'''
         import pickle
-        model_name = "\_" + input_file + ".pkl"
-        file_path = r"pyseed\model_weights"
+        model_name = input_file + ".pkl"
+        file_path = "pyseed/model_weights/"
         pkl_filename = file_path + model_name
         with open(pkl_filename, 'wb') as file:
             pickle.dump(model, file)
@@ -59,7 +59,7 @@ class IO_processing:
             training_flag = False
         else:
             training_flag = True
-            print("Training weights not found, swtichin to training flag = True")
+            print("Training weights not found, activating model training")
         return training_flag
                 
 
