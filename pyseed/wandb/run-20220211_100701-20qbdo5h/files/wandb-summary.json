@@ -1,1 +1,0 @@
-{"accuracy": 0.6909375, "loss": "sklearn.metrics._classification.brier_score_loss", "_runtime": 1683, "_timestamp": 1644575704, "_step": 2, "_wandb": {"runtime": 164}}

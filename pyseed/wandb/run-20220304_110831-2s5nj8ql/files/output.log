@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation_2\main.py", line 125, in <module>
-    main()
-  File "C:\Users\B00460204\OneDrive - Ulster University\Phd - FPGA acceleration in genomics\2020-21 MainResearch\Seed_generation\rapid-SMEM\Rapid-SMEM\gnb_seed_generation_2\main.py", line 78, in main
-    training_flag, training_data = training_data_obj.generate_training_data(reference_genome_file, count, training_flag) #will gen index if does not already exsist
-TypeError: GenTraining.generate_training_data() takes 3 positional arguments but 4 were given
