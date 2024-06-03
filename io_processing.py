@@ -12,7 +12,7 @@ def batch_split(batch_size, sequence_string, sequence_length):
     # print("Total number of temp batches to generate are: " + str(number_of_batches))
     # batches = list(map(''.join, zip(*[iter(sequence_string)]*batch_size))) #generate batches from sequence - does this inc tails?
     
-    # path = r"gnb_seed_generation_2\data_sets\_temp\reference_" # temp dir file path
+    # path = r"gnb_seed_generation_2\reference_genomes\_temp\reference_" # temp dir file path
     # for i in range(len(batches)):
     #     filename = path  + "batch_" + str(i) + ".txt"
     #     file = open(filename, "w")

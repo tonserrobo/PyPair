@@ -185,9 +185,9 @@ class GenIndex():
         #index = k_length_seed_plus1_mimus1(seed_length, index)
 
         try:
-            index.to_csv("data_sets/indexed_reference.csv", index = False)
+            index.to_csv("reference_genomes/indexed_reference.csv", index = False)
         except OSError:
-            print("Cannot find data_sets directory, creating one...")
+            print("Cannot find reference_genomes directory, creating one...")
             os.makedirs('data_sets')
-            index.to_csv("data_sets/indexed_reference.csv", index = False)
+            index.to_csv("reference_genomes/indexed_reference.csv", index = False)
         return index

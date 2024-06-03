@@ -165,10 +165,11 @@ class GenTraining:
         training_set['rev_k-seed-extend'] = encoder_decoder.encode(training_k_seeds_extend_rev)
         logging.info('... ... Full read map REV training data generation: Compleate')
         try:
-            training_set.to_csv("data_sets/training_data.csv", index=False)
+            training_set.to_csv("reference_genomes/training_data.csv", index=False)
         except OSError:
-            print("Cannot find data_sets directory, creating one...")
+            print("Cannot find reference_genomes directory, creating one...")
             os.makedirs('data_sets')
-            training_set.to_csv("data_sets/training_data.csv", index=False)
+            training_set.to_csv("reference_genomes/training_data.csv", index=False)
         logging.info('... Generating training data: Compleate')
         return training_set
+
