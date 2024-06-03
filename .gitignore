@@ -1,0 +1,11 @@
+/.ipynb_checkpoints/
+/.pytest_cache/
+/predict_seeds_JIT.py
+/Validation/S1_reference.csv
+/Validation/S2_reference.csv
+/Validation/S3_reference.csv
+/Validation/S4_reference.csv
+/reference_samples/S1_extended_encoded_reference.csv
+/reference_samples/S2_extended_encoded_reference.csv
+/reference_samples/S3_extended_encoded_reference.csv
+/reference_samples/S4_extended_encoded_reference.csv
