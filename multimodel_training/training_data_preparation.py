@@ -10,8 +10,6 @@ class TrainingDataGenerator:
     for ref_file in reference_files:
         # Data import
         file_path = os.path.join(folder_path, ref_file)
-
-        # Specify dtypes explicitly to handle potential inference issues
         dtypes = {
             "k-seed": pl.Utf8,
             "rc_seeds": pl.Utf8,

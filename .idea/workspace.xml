@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6b6f8509-a2a6-45b7-a722-bd37ea1a08f4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/changelog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PyPair.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PyPair.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/multi_model_training.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/multimodel_training/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/multimodel_training/training_data_preparation.py" beforeDir="false" afterPath="$PROJECT_DIR$/multimodel_training/training_data_preparation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predict_seeds_JIT.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +42,19 @@
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tony\OneDrive - Ulster University\Publications\PhD Thesis\PyPair\old" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -42,7 +63,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736800282289</updated>
-      <workItem from="1736800284837" duration="151000" />
+      <workItem from="1736800284837" duration="2381000" />
     </task>
     <servers />
   </component>
