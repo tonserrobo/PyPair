@@ -1,0 +1,3 @@
+﻿Mode,Memory (MB),Execution Time (s),Memory (MB) per query,Execution Time (s) per query,Memory Variance,Execution Time Variance,Memory Std Dev,Execution Time Std Dev,Throughput (queries/sec)
+Exact_match,0.016417,0.016417,0.004104,0.000002,0.000022,0.000022,0.004719,0.004719,609193.463323
+Approximate_match,289.183176,18.067305,72.295794,0.028915,326.427523,326.427523,18.067305,18.067305,34.583616

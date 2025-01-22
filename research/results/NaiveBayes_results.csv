@@ -1,0 +1,5 @@
+Model,Sample,Mean CV F1 Score,Precision,Recall,F1 Score,Memory (MB) per read mapping,Execution Time (s) per read mapping,Memory (MB) 50k batch,Execution Time (s) 50k batch
+NaiveBayesClassifier,S1,1.0,1.0,1.0,1.0,,1.7547607421875e-06,,0.0003509521484375
+NaiveBayesClassifier,S2,1.0,1.0,1.0,1.0,,0.0,,0.0
+NaiveBayesClassifier,S3,1.0,1.0,1.0,1.0,,0.0,,0.0
+NaiveBayesClassifier,S4,1.0,1.0,1.0,1.0,,3.464221954345703e-06,,0.0006928443908691406

@@ -122,7 +122,7 @@ class GenIndex():
         # Full read mapping extension
         index = k_length_seed_extension(seed_length, index)
 
-        output_dir = "reference_genomes"
+        output_dir = "data/reference_genomes"
         try:
             os.makedirs(output_dir, exist_ok=True)
             output_file = os.path.join(output_dir, "indexed_reference.csv")

@@ -1,0 +1,2 @@
+Memory (MB),Execution Time (s),Memory (MB) per query,Execution Time (s) per query,Memory Variance,Execution Time Variance,Memory Std Dev,Execution Time Std Dev,Throughput (queries/sec)
+,0.01641678810119629,,1.6415146586537636e-06,,2.2273630707403308e-05,,0.004719494751284644,609193.4633225381
