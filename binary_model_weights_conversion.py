@@ -26,7 +26,7 @@ def convert_joblib_to_bin(joblib_filename, bin_filename):
 
 
 # Example usage
-joblib_filename = "model_weights/centroid_model.joblib"  # Path to your joblib file
+joblib_filename = "models/model_weights/centroid_model.joblib"  # Path to your joblib file
 bin_filename = "model_weights.bin"  # Desired output .bin file path
 
 convert_joblib_to_bin(joblib_filename, bin_filename)

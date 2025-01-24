@@ -4,11 +4,9 @@ import pandas as pd
 from Bio.Seq import Seq
 from collections import OrderedDict
 from sklearn.model_selection import train_test_split
-from research.PyPair.io_processing import IO_processing
-from research.PyPair.gen_index import GenIndex
+from io_processing import IO_processing
+from gen_index import GenIndex
 
-# paths
-# root_path = "C:/Users/Tony/OneDrive - Ulster University (1)/Phd - FPGA acceleration in genomics/Publications + Writing/PhD_reports/PhD Thesis/cp3. Seed generation via ML/research"
 folder_path = 'data/reference_samples/'
 
 # seed config

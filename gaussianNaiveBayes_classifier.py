@@ -198,7 +198,7 @@ for X_train, X_test, y_train, y_test in datasets:
     aggregate_metrics['Execution Time (s) per read mapping'].append(execution_time_per_read)
 
 # Save the last trained Gaussian Naive Bayes model
-filename = 'model_weights/gaussian_nb_model.joblib'
+filename = 'models/model_weights/gaussian_nb_model.joblib'
 joblib.dump(best_model, filename)
 
 # SHAP Explainer
@@ -231,8 +231,8 @@ NaiveBayes_results = NaiveBayes_results[['Model',
                                          'Memory (MB) 50k batch',
                                          'Execution Time (s) 50k batch']]
 
-NaiveBayes_results.to_csv("NaiveBayes_results.csv", index=False)
-NaiveBayes_shap_values.to_csv("NaiveBayes_shap_values.csv", index=False)
+NaiveBayes_results.to_csv("results/NaiveBayes_results.csv", index=False)
+NaiveBayes_shap_values.to_csv("results/NaiveBayes_shap_values.csv", index=False)
 
 del best_model, X_test, X_train, y_train, y_test
 gc.collect()

@@ -2,27 +2,24 @@ import pandas as pd
 
 """ import data """
 # results
-
-NaiveBayes_results = pd.read_csv("")
-NaiveBayes_shap_values = pd.read_csv("")
-
 NearestCentroid_results = pd.read_csv("results/nearest_centroid_results.csv")
-NearestCentroid_shap_values = pd.read_csv("results/nearest_centroid_shap_values.csv")
 KNeighborsClassifier_results = pd.read_csv("results/KNeighborsClassifier_results.csv")
-KNeighborsClassifier_shap_values = pd.read_csv("results/KNeighborsClassifier_shap_values.csv")
 RandomForestClassifier_results = pd.read_csv("results/RandomForestClassifier_results.csv")
-RandomForestClassifier_shap_values = pd.read_csv("results/RandomForestClassifier_shap_values.csv")
 ExtraTreesClassifier_results = pd.read_csv("results/ExtraTreesClassifier_results.csv")
-ExtraTreesClassifier_shap_values = pd.read_csv("results/ExtraTreesClassifier_shap_values.csv")
 DecisionTreeClassifier_results = pd.read_csv("results/decisionTreeClassifier_results.csv")
-DecisionTreeClassifier_shap_values = pd.read_csv("results/DecisionTreeClassifier_shap_values.csv")
+GNaiveBayes_results = pd.read_csv("results/NaiveBayes_results.csv")
 LGBMClassifier_results = pd.read_csv("results/LGBMClassifier_results.csv")
-LGBMClassifier_shap_values = pd.read_csv("results/LGBMClassifier_shap_values.csv")
 XGBClassifier_results = pd.read_csv("results/XGBClassifier_results.csv")
-XGBClassifier_shap_values = pd.read_csv("results/XGBClassifier_shap_values.csv")
 
 # shap values
-
+NearestCentroid_shap_values = pd.read_csv("results/nearest_centroid_shap_values.csv")
+KNeighborsClassifier_shap_values = pd.read_csv("results/KNeighborsClassifier_shap_values.csv")
+RandomForestClassifier_shap_values = pd.read_csv("results/RandomForestClassifier_shap_values.csv")
+ExtraTreesClassifier_shap_values = pd.read_csv("results/ExtraTreesClassifier_shap_values.csv")
+DecisionTreeClassifier_shap_values = pd.read_csv("results/DecisionTreeClassifier_shap_values.csv")
+GNaiveBayes_shap_values = pd.read_csv("results/NaiveBayes_shap_values.csv")
+LGBMClassifier_shap_values = pd.read_csv("results/LGBMClassifier_shap_values.csv")
+XGBClassifier_shap_values = pd.read_csv("results/XGBClassifier_shap_values.csv")
 
 """ Aggregate archetype results """
 # Aggregating NearestNeighbour results
@@ -40,8 +37,8 @@ AveragingMethods_shap_values = pd.concat([ExtraTreesClassifier_shap_values,
                                           DecisionTreeClassifier_shap_values])
 
 # NaiveBayes
-NaiveBayes_results
-NaiveBayes_shap_values
+NaiveBayes_results = GNaiveBayes_results
+NaiveBayes_shap_values = GNaiveBayes_shap_values
 
 # Gradient Boosting results
 GradientBoosting_results = pd.concat([XGBClassifier_results,
@@ -57,6 +54,9 @@ NearestNeighbour_shap_values.to_csv("NearestNeighbour_shap_values.csv", index=Fa
 
 AveragingMethods_results.to_csv("results/AveragingMethods_results.csv", index=False)
 AveragingMethods_shap_values.to_csv("results/AveragingMethods_shap_values.csv", index=False)
+
+NaiveBayes_results.to_csv("results/NaiveBayes_results.csv", index=False)
+NaiveBayes_shap_values.to_csv("results/NaiveBayes_shap_values.csv", index=False)
 
 GradientBoosting_results.to_csv("results/GradientBoosting_results.csv", index=False)
 GradientBoosting_shap_values.to_csv("results/GradientBoosting_shap_values.csv", index=False)

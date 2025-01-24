@@ -1,9 +1,4 @@
-from msilib import sequence
 from Bio import SeqIO
-from Bio.Seq import Seq
-from Bio.SeqIO.FastaIO import SimpleFastaParser
-import glob
-import sys
 import os
 
 def batch_split(batch_size, sequence_string, sequence_length):

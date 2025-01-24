@@ -202,7 +202,7 @@ for X_train, X_test, y_train, y_test in datasets:
     aggregate_metrics['Execution Time (s) per read mapping'].append(execution_time_per_read)
 
 # Save the last trained Decision Tree model
-filename = 'model_weights/decision_tree_model.joblib'
+filename = 'models/model_weights/decision_tree_model.joblib'
 joblib.dump(best_model, filename)
 
 # SHAP Explainer

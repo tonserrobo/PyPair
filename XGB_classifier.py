@@ -212,7 +212,7 @@ for metric, values in aggregate_metrics.items():
     print({f'Aggregate {metric}': np.mean(values)})
 
 # Save the last trained XGBoost model
-filename = 'model_weights/xgboost_model.joblib'
+filename = 'models/model_weights/xgboost_model.joblib'
 joblib.dump(best_model, filename)
 
 # SHAP Explainer
