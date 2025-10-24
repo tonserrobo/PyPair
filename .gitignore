@@ -37,3 +37,24 @@ data/reference_genomes/indexed_reference.csv
 /reference_samples/S4_extended_encoded_y_test.csv
 /reference_samples/S4_extended_encoded_y_train.csv
 /reference_samples/S4_extended_encoded_y_val.csv
+
+# cache 
+__pycache__/
+.idea
+.vscode
+.DS_Store
+*.pyc
+.pytest_cache
+.ipynb_checkpoints
+
+# virtual environments
+venv/
+env/
+envs/
+*.egg-info/
+.eggs/
+.venv
+
+# results 
+/results/
+/data

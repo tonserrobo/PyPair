@@ -1,0 +1,50 @@
+Key Points & Considerations
+
+    Out-of-core reading:
+        Using vaex.from_csv(..., convert=True) creates an HDF5/Arrow file for faster subsequent loads. This is particularly useful for very large CSVs.
+        Once the data is in .hdf5 or .arrow format, Vaex can map it without loading the entire dataset into RAM.
+
+    In-memory steps:
+        SMOTE, GridSearchCV, and SHAP require in-memory arrays (NumPy/pandas). Thus, after loading with Vaex, we call .to_pandas_df() to convert. For truly massive datasets, you would need alternative approaches (e.g., partial fitting, or chunk-based computations).
+
+    Preprocessing:
+        Vaex handles missing values, infinity replacements, etc., via expressions. You can do more sophisticated transformations (e.g., filtering, outlier clipping) directly on Vaex DataFrames before converting to NumPy.
+
+    Scalability:
+        If the dataset is larger than available memory, be mindful when calling .to_pandas_df(). You might need chunk-based approaches or sampling.
+
+In short, Vaex offers an out-of-core strategy for reading and manipulating large files, but many scikit-learn operations (including cross-validation, SMOTE, and custom model training) still require in-memory arrays. This script outlines a hybrid pipeline that uses Vaex primarily for I/O and preliminary cleansing, then hands off to NumPy-based workflows.
+
+    Reading the Same Data
+    We call vaex.from_csv(...) for each file (e.g., S1_extended_encoded_X_train.csv) exactly like your pandas-based version. If your files are large, consider convert=True for faster subsequent loads (Vaex will create an Arrow/HDF5 cache).
+
+    Combining X and y
+    In the pandas script, you simply have two DataFrames. With Vaex, you can’t just do X['target'] = y['col'] unless you’re sure rows match perfectly. Here we explicitly copy out the NumPy array from the y DataFrame and assign it to X_vaex. The function combine_features_and_target does exactly this, creating a single DataFrame with both features and the label.
+
+    Preprocessing
+        We replace NaNs, ±∞ with 0 in each numeric column in both train and test sets, all out-of-core.
+        Scaling (like StandardScaler) is not shown here. If you want to replicate that, you could compute each column’s mean/std in the training set (via train_df[col].mean(), train_df[col].std()) and then create a virtual column df[f"{col}_scaled"] = (df[col] - mean) / std. Then those scaled columns become your features.
+
+    Fitting
+    VaexGaussianNB.fit uses df.groupby(...) on the label column to compute count, mean, and var for each feature. This is done out-of-core on the entire training set. The resulting groupby is used to populate the class priors, means, and variances.
+
+    Chunked Prediction & Metrics
+        evaluate_chunked calls df.to_items(...) with a chunk_size to read a subset of rows at a time.
+        Each chunk is converted to a NumPy array for the model’s predict_chunk.
+        We accumulate predictions in a confusion matrix so we never hold the entire predicted set in memory.
+        Finally, we compute micro-averaged precision, recall, F1, and accuracy for the entire dataset.
+
+    Results
+        We store each dataset’s final metrics in aggregate_metrics.
+        At the end, we convert it to a pandas DataFrame for display/saving as CSV.
+
+Adapting to Large Data & Additional Features
+
+    Partial Fitting: If even grouping the entire training data at once is too large, you could manually do incremental mean/variance updates per chunk. However, Vaex’s out-of-core aggregations usually suffice for many GB-level datasets (depending on your memory).
+    SMOTE, Cross-Validation: These rely on in-memory arrays, so you’d either:
+        Convert Vaex DataFrames to NumPy on a smaller sample.
+        Use alternative out-of-core or approximate methods.
+        Implement custom chunk-based oversampling. (Advanced)
+    SHAP: Tools like SHAP also expect in-memory data. For extremely large data, you might sample a fraction of your dataset for SHAP interpretations.
+
+With this setup, you can load exactly the same CSVs used in your pandas pipeline, keep the data out-of-core in Vaex, and still compute total (global) metrics on the test set by chunking.

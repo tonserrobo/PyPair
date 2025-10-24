@@ -1,4 +1,3 @@
-<<<<<<<< HEAD:PyPair/encode_decode.py
 from collections import OrderedDict
 
 class Encode_decode():
@@ -68,7 +67,6 @@ class Encode_decode():
         # print(values)
         return output
 
-========
 from collections import OrderedDict
 
 class Encode_decode():
@@ -137,5 +135,3 @@ class Encode_decode():
         # print(characters)
         # print(values)
         return output
-
->>>>>>>> origin/main:encode_decode.py

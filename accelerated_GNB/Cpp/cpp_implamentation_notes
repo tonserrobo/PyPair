@@ -1,0 +1,84 @@
+Below is a single-file, self-contained C++ example illustrating how you might implement and run the same basic steps as the Python script:
+
+    Reading CSVs into memory.
+    Preprocessing/StandardScaling the data.
+    (Optional) Simple SMOTE-like oversampling for rare classes.
+    A custom Gaussian Naive Bayes class with fit(...) and predict(...).
+    Batch predictions on the test set.
+
+    Note
+
+        This example uses the C++ standard library only; no external linear algebra libraries (e.g., Eigen/Armadillo) are used.
+        The SMOTE-like logic here is very minimal (replicates data for rare classes). A full SMOTE implementation would require random neighbor sampling, interpolation, etc.
+        Saving/loading the trained model is demonstrated in a simple text-based manner, rather than a library like joblib.
+        In practice, you might want to separate code into headers/source files, add robust error handling, and consider numeric edge cases.
+
+Key Points & Next Steps
+
+    CSV Loading
+        The above code uses a simplistic readCSV function. Adjust it if your CSV has headers or different separators.
+
+    Data Representation
+        We store X as a std::vector<std::vector<double>>. For very large datasets, consider more optimized structures or memory-mapped files.
+
+    Standard Scaling
+        The standardScale function computes the mean and standard deviation column-wise.
+
+    SMOTE-Like Oversampling
+        True SMOTE does random interpolation between minority samples. This code merely replicates them if they’re too rare. Implement a real SMOTE if needed.
+
+    Gaussian Naive Bayes
+        The logic matches the Python version: compute class means, variances, and priors, then apply the Gaussian log-likelihood formula during prediction.
+
+    Batch Prediction
+        batchPredict simply splits the test set into chunks to mimic the Python logic. In many real cases, you can just predict the entire test set in one pass unless memory is a concern.
+
+    Saving/Loading Model
+        The saveModel function is a placeholder. You’ll likely want to serialize:
+            model.classes_
+            model.class_prior_
+            model.theta_
+            model.sigma_
+            any other relevant fields
+
+    You could then write a loadModel function to read them back into an instance of MyGaussianNB.
+
+Compiling Example
+
+g++ -std=c++17 naive_bayes.cpp -o naive_bayes
+./naive_bayes
+
+You should see "Done. Predictions size: ..." after a successful run (assuming your CSV files are present). You can adapt this snippet to suit your build system (CMake, etc.) or incorporate it into a larger project.
+
+
+## Cuda ##
+Below is a single-file CUDA program that closely mirrors our C++ “full pipeline” while offloading the prediction step to the GPU. It includes:
+
+    Reading CSV data for XX-train, yy-train, XX-test, yy-test (similar to the Python version).
+    Standard scaling of the data (column-wise).
+    A minimal SMOTE-like rebalancing (simple replication if a class is too rare).
+    Custom Gaussian Naive Bayes (CPU-based fit, GPU-based predict).
+    A main() that runs end-to-end on the S1 dataset.
+
+    Notes & Warnings
+
+        CSV Files: Update the folder_path and filenames to match your setup.
+        SMOTE Implementation: As in previous examples, we use a very simple approach (replicating samples for classes with fewer than min_required). A real SMOTE interpolates data; adapt as needed.
+        Saving the Model: We only demonstrate in-memory usage. A real pipeline might store model parameters to disk in a structured format.
+        Error-Checking: This code has minimal checks (e.g., it doesn’t handle missing or invalid CSV data gracefully).
+        Performance: For large-scale data, you’ll want to optimize memory usage (e.g., using float instead of double, or advanced streaming approaches).
+
+
+Compilation & Execution
+
+    Place this file (e.g., naive_bayes_cuda.cu) in your project folder.
+    Adjust the folder_path to point to your actual CSV location if it’s different.
+    Compile with NVCC:
+
+nvcc naive_bayes_cuda.cu -o naive_bayes_cuda -std=c++11
+
+Run:
+
+    ./naive_bayes_cuda
+
+If everything is set up correctly (CSV files present, etc.), you should see output showing how many samples were loaded, that the model was fit, and then predictions for the first few test rows.
