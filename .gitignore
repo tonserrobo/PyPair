@@ -1,5 +1,6 @@
 /.ipynb_checkpoints/
 /.pytest_cache/
+/.coverage
 /predict_seeds_JIT.py
 /__pycache__
 .idea
@@ -68,8 +69,17 @@ envs/
 .eggs/
 .venv
 
-# results
-/results/
+# results (keep the provenance note and canonical CSVs; ignore raw outputs)
+/results/*
+!/results/README.md
+!/results/canonical_model_comparison.csv
+!/results/noninferiority_report.md
+!/results/noninferiority_results.csv
+!/results/NaiveBayes_results.csv
+!/results/nearest_centroid_results.csv
+!/results/scaling_analysis.csv
+!/results/seed_mapping_profile_fast.csv
+!/results/seed_mapping_summary_fast.txt
 /data
 
 # Large data files

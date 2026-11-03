@@ -17,11 +17,14 @@ Author: Tony Robinson (t.robinson@ulster.ac.uk)
 Date: 2025-01-24
 """
 
+import argparse
+import math
+from pathlib import Path
+from typing import Dict
+
 import numpy as np
 import pandas as pd
 from scipy import stats
-import researchpy as rp
-from typing import Tuple, Dict
 
 
 # BWA Benchmark (from literature and user specification)
@@ -93,6 +96,54 @@ def noninferiority_ttest(
         'decision': 'NON-INFERIOR' if non_inferior else 'INCONCLUSIVE',
         'speedup_vs_bwa': bwa_time / mean_ml if mean_ml > 0 else np.inf,
         'percent_faster': ((bwa_time - mean_ml) / bwa_time * 100) if mean_ml > 0 else np.inf
+    }
+
+
+def noninferiority_ttest_from_summary(
+    mean: float,
+    std: float,
+    n: int,
+    bwa_time: float = BWA_SEC_PER_SEED,
+    margin: float = NONINFERIORITY_MARGIN,
+    alpha: float = ALPHA,
+) -> Dict:
+    """One-sample one-sided t-test from summary statistics.
+
+    This is the exact test for a mean against a non-inferiority threshold; it
+    does not simulate replicates. ``std`` is the sample standard deviation
+    (ddof=1).
+    """
+    if n < 2:
+        raise ValueError("n must be at least 2 for a t-test")
+
+    threshold = bwa_time * (1 + margin)
+    df = n - 1
+    se = std / math.sqrt(n)
+    t_stat = (mean - threshold) / se if se > 0 else (-math.inf if mean < threshold else math.inf)
+    p_value = float(stats.t.cdf(t_stat, df))
+    t_critical = float(stats.t.ppf(1 - alpha, df))
+    ci_upper = mean + t_critical * se
+    cohens_d = (threshold - mean) / std if std > 0 else math.inf
+    non_inferior = bool(p_value < alpha and ci_upper < threshold)
+    superior = bool(p_value < alpha and ci_upper < bwa_time)
+
+    return {
+        'ml_mean_sec': mean,
+        'ml_std_sec': std,
+        'bwa_threshold_sec': threshold,
+        'threshold': threshold,
+        'bwa_time_sec': bwa_time,
+        'n': n,
+        'standard_error': se,
+        't_statistic': t_stat,
+        'p_value': p_value,
+        'ci_upper_bound': ci_upper,
+        'cohens_d': cohens_d,
+        'non_inferior': non_inferior,
+        'superior': superior,
+        'decision': 'NON-INFERIOR' if non_inferior else 'INCONCLUSIVE',
+        'speedup_vs_bwa': bwa_time / mean if mean > 0 else math.inf,
+        'percent_faster': ((bwa_time - mean) / bwa_time * 100) if mean > 0 else math.inf,
     }
 
 
@@ -169,31 +220,40 @@ def comprehensive_noninferiority_analysis(
 
     # Analyze each batch size
     for _, row in batch_results.iterrows():
-        batch_size = row['batch_size']
+        batch_size = int(row['batch_size'])
+        n_runs = int(row.get('n_runs', 5))
 
-        # For non-inferiority, we need replicate timing measurements
-        # Since we have 3 replicates stored, we'll simulate using mean ± std
-        # In production, use actual replicate data
-        mean_time = row['time_per_seed_sec']
-        std_time = row.get('time_std_sec', mean_time * 0.05)  # Assume 5% CV if not available
+        if 'mean_time_sec' in row and 'std_time_sec' in row:
+            mean_time = float(row['mean_time_sec']) / batch_size
+            std_population = float(row['std_time_sec']) / batch_size
+        else:
+            mean_time = float(row['time_per_seed_sec'])
+            std_population = float(row.get('time_std_sec', mean_time * 0.05))
 
-        # Simulate 30 replicates (clinical trial standard minimum)
-        # In actual analysis, use real timing measurements
-        simulated_times = np.random.normal(mean_time, std_time, 30)
+        std_time = (
+            std_population * math.sqrt(n_runs / (n_runs - 1))
+            if n_runs > 1 else 0.0
+        )
 
-        # Non-inferiority test
-        ni_test = noninferiority_ttest(simulated_times, bwa_time, margin)
-
-        # Superiority test
-        sup_test = superiority_ttest(simulated_times, bwa_time)
+        ni_test = noninferiority_ttest_from_summary(
+            mean=mean_time,
+            std=std_time,
+            n=n_runs,
+            bwa_time=bwa_time,
+            margin=margin,
+        )
 
         results['batch_analyses'][batch_size] = {
             'mean_time_sec': mean_time,
             'std_time_sec': std_time,
             'noninferiority': ni_test,
-            'superiority': sup_test,
+            'superiority': {
+                'p_value': ni_test['p_value'],
+                'superior': ni_test['superior'],
+                'decision': 'SUPERIOR' if ni_test['superior'] else 'NOT SUPERIOR',
+            },
             'memory_mb': row.get('memory_mb', None),
-            'speedup': row.get('vs_bwa_speedup', bwa_time / mean_time)
+            'speedup': ni_test['speedup_vs_bwa'],
         }
 
     # Overall decision across all batch sizes
@@ -320,16 +380,219 @@ def generate_noninferiority_report(
     return report_text
 
 
+def _profile_tests(
+    profile: pd.DataFrame,
+    bwa_time: float,
+    margin: float,
+    alpha: float,
+    n_runs: int,
+) -> pd.DataFrame:
+    """Run the summary-statistics test for every profiled configuration."""
+    rows = []
+    for _, row in profile.iterrows():
+        batch_size = int(row["batch_size"])
+        mean = float(row["mean_time_sec"]) / batch_size
+        std_population = float(row["std_time_sec"]) / batch_size
+        std = (
+            std_population * math.sqrt(n_runs / (n_runs - 1))
+            if n_runs > 1 else 0.0
+        )
+        result = noninferiority_ttest_from_summary(
+            mean=mean,
+            std=std,
+            n=n_runs,
+            bwa_time=bwa_time,
+            margin=margin,
+            alpha=alpha,
+        )
+        rows.append({
+            "model": row["model_name"],
+            "dataset": row["dataset"],
+            "batch_size": batch_size,
+            "n_runs": n_runs,
+            "mean_ms_per_seed": mean * 1000,
+            "std_ms_per_seed": std * 1000,
+            "threshold_ms": result["threshold"] * 1000,
+            "t_statistic": result["t_statistic"],
+            "p_value": result["p_value"],
+            "ci_upper_ms": result["ci_upper_bound"] * 1000,
+            "cohens_d": result["cohens_d"],
+            "speedup_vs_bwa": result["speedup_vs_bwa"],
+            "non_inferior": result["non_inferior"],
+            "superior": result["superior"],
+            "decision": result["decision"],
+        })
+    return pd.DataFrame(rows)
+
+
+def _accuracy_test(
+    accuracy: pd.DataFrame,
+    bwa_accuracy: float,
+    margin_pp: float,
+    alpha: float,
+) -> Dict:
+    """Test GNB accuracy non-inferiority by transforming F1 to a loss."""
+    if "F1 Score" not in accuracy.columns:
+        raise ValueError("accuracy file must contain an 'F1 Score' column")
+
+    f1 = accuracy["F1 Score"].astype(float) * 100
+    mean_f1 = float(f1.mean())
+    std_f1 = float(f1.std(ddof=1))
+    n = int(len(f1))
+    if n < 2:
+        raise ValueError("accuracy file needs at least two rows")
+
+    bwa_loss = 100.0 - bwa_accuracy
+    mean_loss = 100.0 - mean_f1
+    margin = margin_pp / bwa_loss
+    result = noninferiority_ttest_from_summary(
+        mean=mean_loss,
+        std=std_f1,
+        n=n,
+        bwa_time=bwa_loss,
+        margin=margin,
+        alpha=alpha,
+    )
+    return {
+        "n_datasets": n,
+        "mean_f1": mean_f1,
+        "std_f1": std_f1,
+        "bwa_accuracy": bwa_accuracy,
+        "margin_pp": margin_pp,
+        "threshold_f1": 100.0 - result["threshold"],
+        "mean_loss": mean_loss,
+        "p_value": result["p_value"],
+        "ci_upper_loss": result["ci_upper_bound"],
+        "ci_lower_f1": 100.0 - result["ci_upper_bound"],
+        "cohens_d": result["cohens_d"],
+        "non_inferior": result["non_inferior"],
+        "decision": result["decision"],
+    }
+
+
+def _write_report(
+    speed: pd.DataFrame,
+    accuracy: Dict | None,
+    bwa_ms: float,
+    margin_ms: float,
+    alpha: float,
+    n_runs: int,
+    path: Path,
+) -> None:
+    lines = [
+        "# Non-inferiority results",
+        "",
+        "## Method",
+        "",
+        f"- BWA-MEM baseline: {bwa_ms:.3f} ms/seed.",
+        f"- Non-inferiority margin: {margin_ms:.3f} ms (threshold {bwa_ms + margin_ms:.3f} ms/seed).",
+        f"- n = {n_runs} replicate timings per configuration, from `results/seed_mapping_profile_fast.csv`.",
+        "- One-sided one-sample t-test computed exactly from the summary mean and sample SD; no simulated replicates.",
+        f"- Decision: non-inferior if p < {alpha:.2f} and the one-sided 95% upper CI is below the threshold.",
+        "",
+        "## Speed",
+        "",
+        "| Model | Dataset | Batch | Mean ms/seed | 95% CI upper | Threshold | p | Speed-up | Decision |",
+        "|---|---|---:|---:|---:|---:|---:|---:|---|",
+    ]
+    for _, row in speed.iterrows():
+        p_display = "< 0.001" if row['p_value'] < 0.001 else f"{row['p_value']:.3g}"
+        lines.append(
+            f"| {row['model']} | {row['dataset']} | {row['batch_size']:,} | "
+            f"{row['mean_ms_per_seed']:.6f} | {row['ci_upper_ms']:.6f} | "
+            f"{row['threshold_ms']:.3f} | {p_display} | "
+            f"{row['speedup_vs_bwa']:.2f}x | {row['decision']} |"
+        )
+
+    lines += ["", "## Model summary", "",
+              "| Model | Configurations | Non-inferior | Superior | Mean speed-up |",
+              "|---|---:|---:|---:|---:|"]
+    for model, group in speed.groupby("model"):
+        lines.append(
+            f"| {model} | {len(group)} | {int(group['non_inferior'].sum())} | "
+            f"{int(group['superior'].sum())} | {group['speedup_vs_bwa'].mean():.2f}x |"
+        )
+
+    if accuracy:
+        lines += [
+            "",
+            "## Accuracy (Gaussian NB)",
+            "",
+            f"- Mean per-dataset F1: {accuracy['mean_f1']:.2f}% (SD {accuracy['std_f1']:.2f}, n = {accuracy['n_datasets']}).",
+            f"- BWA-MEM reference accuracy: {accuracy['bwa_accuracy']:.2f}%.",
+            f"- Non-inferiority threshold: {accuracy['threshold_f1']:.2f}% (margin {accuracy['margin_pp']:.2f} pp).",
+            f"- One-sided 95% lower F1 bound: {accuracy['ci_lower_f1']:.2f}%.",
+            f"- p-value (loss < threshold): {accuracy['p_value']:.3g}.",
+            f"- Decision: **{accuracy['decision']}**.",
+        ]
+
+    lines += [
+        "",
+        "## Caveats",
+        "",
+        "- The profiler retains summary statistics over five runs, not the raw run-level timings. "
+        "The t-test uses the summary mean and sample SD, which is exact for a one-sample test "
+        "but cannot detect run-level outliers.",
+        "- The accuracy test treats the four per-dataset F1 values as replicates and the BWA "
+        "accuracy as a fixed reference. A paired test would require BWA accuracy on the same "
+        "four samples.",
+        "- The model results in the repository come from more than one protocol; this report uses "
+        "`seed_mapping_profile_fast.csv` and `NaiveBayes_results.csv` only. See "
+        "`docs/results_provenance.md`.",
+    ]
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Non-inferiority tests for PyPair vs BWA-MEM")
+    parser.add_argument("--profile", type=Path, default=Path("results/seed_mapping_profile_fast.csv"))
+    parser.add_argument("--accuracy", type=Path, default=Path("results/NaiveBayes_results.csv"))
+    parser.add_argument("--out", type=Path, default=Path("results/noninferiority_results.csv"))
+    parser.add_argument("--report", type=Path, default=Path("results/noninferiority_report.md"))
+    parser.add_argument("--bwa-ms", type=float, default=3.0)
+    parser.add_argument("--margin-ms", type=float, default=0.5)
+    parser.add_argument("--accuracy-margin-pp", type=float, default=2.0)
+    parser.add_argument("--bwa-accuracy", type=float, default=96.2)
+    parser.add_argument("--alpha", type=float, default=0.05)
+    parser.add_argument("--n-runs", type=int, default=5)
+    args = parser.parse_args(argv)
+
+    if not args.profile.is_file():
+        raise FileNotFoundError(f"profile not found: {args.profile}")
+
+    profile = pd.read_csv(args.profile)
+    required = {"model_name", "dataset", "batch_size", "mean_time_sec", "std_time_sec"}
+    missing = required - set(profile.columns)
+    if missing:
+        raise ValueError(f"profile missing columns: {sorted(missing)}")
+
+    bwa_time = args.bwa_ms / 1000
+    margin = (args.margin_ms / 1000) / bwa_time
+    speed = _profile_tests(profile, bwa_time, margin, args.alpha, args.n_runs)
+
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    speed.to_csv(args.out, index=False)
+
+    accuracy = None
+    if args.accuracy.is_file():
+        accuracy = _accuracy_test(
+            pd.read_csv(args.accuracy),
+            args.bwa_accuracy,
+            args.accuracy_margin_pp,
+            args.alpha,
+        )
+
+    _write_report(speed, accuracy, args.bwa_ms, args.margin_ms, args.alpha, args.n_runs, args.report)
+
+    print(f"speed rows: {len(speed)}")
+    print(f"non-inferior: {int(speed['non_inferior'].sum())}/{len(speed)}")
+    print(f"superior: {int(speed['superior'].sum())}/{len(speed)}")
+    if accuracy:
+        print(f"accuracy: {accuracy['decision']} (p={accuracy['p_value']:.3g})")
+    print(f"wrote {args.out}")
+    print(f"wrote {args.report}")
+    return 0
+
+
 if __name__ == "__main__":
-    # Example usage
-    print("="*80)
-    print("PyPair: Non-Inferiority Testing Framework")
-    print("="*80)
-    print(f"\nBWA Reference: {BWA_SEC_PER_SEED*1000:.3f} ms/seed")
-    print(f"Non-Inferiority Threshold: {NONINFERIORITY_THRESHOLD*1000:.3f} ms/seed")
-    print(f"Margin: {NONINFERIORITY_MARGIN*100:.1f}%")
-    print("\nFramework ready for S1-S4 validation.")
-    print("\nUsage:")
-    print("  from scripts.noninferiority_testing import comprehensive_noninferiority_analysis")
-    print("  results = comprehensive_noninferiority_analysis(batch_df, 'Nearest Centroid')")
-    print("  report = generate_noninferiority_report(results, 'results/noninferiority_NC.txt')")
+    raise SystemExit(main())

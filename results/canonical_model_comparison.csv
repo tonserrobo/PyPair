@@ -1,0 +1,9 @@
+model,cv_score_pct,test_f1_pct,overfitting_gap_pp,train_time_s,model_size_mb,inference_ms_per_seed,source,notes
+KNN,99.7,94.4,5.3,12,2.0,0.084,Chapter 3 Table 3.6,Corrected from the 99.88 transcription error
+Nearest Centroid,98.0,95.7,2.3,8,1.2,0.012,Chapter 3 Table 3.6,
+Gaussian NB,95.1,94.7,0.4,15,7.0,0.84,Chapter 3 Table 3.6,Aggregate model; per-sample serialized model is 1.9 MB
+Decision Tree,96.2,94.8,1.4,45,0.025,0.003,Chapter 3 Table 3.6,
+Extra Trees,99.2,94.9,4.3,320,118.0,1.2,Chapter 3 Table 3.6,
+Random Forest,100.0,92.8,7.2,280,117.0,1.1,Chapter 3 Table 3.6,
+XGBoost,100.0,91.8,8.2,450,102.0,2.3,Chapter 3 Table 3.6,
+LightGBM,100.0,90.5,9.5,380,233.0,1.8,Chapter 3 Table 3.6,

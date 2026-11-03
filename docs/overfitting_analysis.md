@@ -1,5 +1,11 @@
 # Overfitting Analysis: Why Tree-Based Models Fail
 
+> **Canonical status:** the aggregate table in this note is the protocol-consistent
+> baseline. The repository also contains divergent legacy files; see
+> [`docs/results_provenance.md`](results_provenance.md). The KNN result file in
+> `results/` is contaminated (its precision, recall and F1 are identical to the
+> GNB file); use the canonical table, not that file.
+
 ## Executive Summary
 
 Comprehensive evaluation of 8 machine learning classifiers revealed **severe overfitting in tree-based ensemble methods** (Random Forest, LGBM, XGBoost) when applied to genomic seed alignment. This document analyzes the root causes and explains why **Gaussian Naive Bayes emerged as the optimal solution**.

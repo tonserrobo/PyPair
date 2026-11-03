@@ -1,0 +1,70 @@
+================================================================================
+PyPair: Seed Mapping Performance Profile (Fast)
+================================================================================
+
+SUMMARY STATISTICS
+--------------------------------------------------------------------------------
+Total profiles: 32
+Successful: 32
+Failed: 0
+
+TOP PERFORMERS (10k seed batch)
+--------------------------------------------------------------------------------
+KNN on S1:
+  Time/seed: 0.083505 ms (83.51 us)
+  Throughput: 11,975.31 seeds/sec
+  vs BWA: 35.93x (FASTER)
+  Stability: median=0.835052s, std=0.014593s
+
+KNN on S3:
+  Time/seed: 0.147536 ms (147.54 us)
+  Throughput: 6,778.03 seeds/sec
+  vs BWA: 20.33x (FASTER)
+  Stability: median=1.475356s, std=0.348893s
+
+KNN on S4:
+  Time/seed: 0.158681 ms (158.68 us)
+  Throughput: 6,301.93 seeds/sec
+  vs BWA: 18.91x (FASTER)
+  Stability: median=1.586814s, std=0.385671s
+
+KNN on S2:
+  Time/seed: 0.163094 ms (163.09 us)
+  Throughput: 6,131.44 seeds/sec
+  vs BWA: 18.39x (FASTER)
+  Stability: median=1.630939s, std=0.334623s
+
+Gaussian NB on S3:
+  Time/seed: 0.330276 ms (330.28 us)
+  Throughput: 3,027.77 seeds/sec
+  vs BWA: 9.08x (FASTER)
+  Stability: median=3.302760s, std=0.824906s
+
+
+BWA COMPARISON SUMMARY
+--------------------------------------------------------------------------------
+BWA benchmark: 3.000 ms/seed
+
+Faster than BWA: 32/32 (100.0%)
+Slower than BWA: 0/32 (0.0%)
+
+Average speedup (for faster models): 18.22x
+Maximum speedup: 71.60x
+
+
+MODEL-WISE AVERAGE PERFORMANCE
+--------------------------------------------------------------------------------
+Model                ms/seed      us/seed      seeds/sec       BWA speedup
+--------------------------------------------------------------------------------
+KNN                  0.121713     121.71       10,585          31.75x
+Gaussian NB          0.836114     836.11       1,564           4.69x
+
+
+BATCH SIZE IMPACT (Average across all models)
+--------------------------------------------------------------------------------
+Batch Size      ms/seed      seeds/sec       BWA speedup
+--------------------------------------------------------------------------------
+1,000           0.445643     10,015          30.05x
+5,000           0.349669     5,589           16.77x
+10,000          0.326126     5,002           15.01x
+14,000          0.794216     3,692           11.07x
