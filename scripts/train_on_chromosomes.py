@@ -33,6 +33,7 @@ project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
 from accelerated_GNB.GNB_vaex.GNB_HDF5_optimised import VaexGaussianNB
+from scripts.vaex_utils import to_numpy
 
 
 def train_gnb_on_chromosomes(
@@ -105,10 +106,7 @@ def train_gnb_on_chromosomes(
     print("\n  Computing metrics...")
 
     # Convert to numpy if needed
-    if hasattr(y_test, 'values'):
-        y_test_np = y_test.values
-    else:
-        y_test_np = y_test
+    y_test_np = to_numpy(y_test)
 
     # For genomic position prediction, we need to discretize or use regression metrics
     # For now, let's compute classification metrics if positions are discrete

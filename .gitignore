@@ -80,6 +80,10 @@ envs/
 !/results/scaling_analysis.csv
 !/results/seed_mapping_profile_fast.csv
 !/results/seed_mapping_summary_fast.txt
+!/results/cleaned_model_evaluation.csv
+!/results/bwa_wsl_report.md
+!/results/bwa_wsl_summary.csv
+!/results/bwa_wsl_benchmark.csv
 /data
 
 # Large data files

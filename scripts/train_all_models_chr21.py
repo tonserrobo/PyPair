@@ -39,6 +39,8 @@ from xgboost import XGBClassifier
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
+from scripts.vaex_utils import to_numpy
+
 
 def train_and_evaluate_model(
     model_name: str,
@@ -59,22 +61,13 @@ def train_and_evaluate_model(
         'n_features': X_train.shape[1] if hasattr(X_train, 'shape') else len(X_train.columns)
     }
 
-    # Convert Vaex to numpy if needed
-    if isinstance(X_train, vaex.dataframe.DataFrame):
-        print("  Converting training data to numpy...")
-        X_train_np = X_train.values
-        y_train_np = y_train.values
-    else:
-        X_train_np = X_train
-        y_train_np = y_train
-
-    if isinstance(X_test, vaex.dataframe.DataFrame):
-        print("  Converting test data to numpy...")
-        X_test_np = X_test.values
-        y_test_np = y_test.values
-    else:
-        X_test_np = X_test
-        y_test_np = y_test
+    # Convert Vaex/local dataframes to numpy. DataFrameLocal has no .values or
+    # .to_numpy, so go through pandas.
+    print("  Converting data to numpy...")
+    X_train_np = to_numpy(X_train)
+    y_train_np = to_numpy(y_train)
+    X_test_np = to_numpy(X_test)
+    y_test_np = to_numpy(y_test)
 
     # Train
     print("  Training model...")
