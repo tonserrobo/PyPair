@@ -16,18 +16,30 @@ across files.
 | `seed_mapping_summary_fast.txt` | `scripts/profile_seed_mapping_fast.py` | Human-readable throughput summary |
 | `noninferiority_results.csv` | `scripts/noninferiority_testing.py` | Per-configuration non-inferiority tests |
 | `noninferiority_report.md` | `scripts/noninferiority_testing.py` | Method, speed table, accuracy test, caveats |
+| `cleaned_model_evaluation.csv` | `scripts/evaluate_saved_models.py` | Protocol B: saved KNN/GNB evaluated on cleaned test sets |
+| `bwa_wsl_summary.csv` | `scripts/parse_bwa_sam.py` | Measured BWA-MEM baseline in WSL |
+| `bwa_wsl_report.md` | WSL BWA benchmark | Method, results and the whole-genome baseline caveat |
+
+Protocol A is the aggregate eight-model table (`canonical_model_comparison.csv`).
+Protocol B is the cleaned saved-model evaluation (`cleaned_model_evaluation.csv`).
+The KNN 99.88% value belongs to Protocol B; the aggregate KNN value is 94.4%.
+Do not mix them.
+
+The BWA summary is a measured chr21/100 kb baseline. The chapter's 3.0 ms/seed
+figure is a whole-genome baseline; see `bwa_wsl_report.md`.
 
 ## Legacy (moved to `results/legacy/`)
 
 | File | Why it is not canonical |
 |---|---|
-| `KNeighborsClassifier_results.csv` | Precision/recall/F1 are identical to the GNB file; result-handling error, not an independent KNN measurement |
+| `KNeighborsClassifier_results.csv` | Stale copy of the GNB metrics; clean replacement is `cleaned_model_evaluation.csv` (KNN 99.87% on Protocol B) |
 | `comprehensive_model_analysis.csv` | Mixed protocol: several models fail (`too many values to unpack`, `DataFrameLocal`), and KNN values duplicate Nearest Centroid |
 | `S1_model_comparison.csv` | Different feature/protocol run (11 features, 10k classes); KNN 84.75% and Nearest Centroid 99.87% do not match the aggregate table |
 | `chr21_model_comparison.csv` | Every model is a fatal error (`'DataFrameLocal' object has no attribute 'to_numpy'`); no training completed |
 
-The canonical files in the table above are tracked in git; the SHAP artefacts
-and `results/legacy/` are ignored.
+The canonical files in the table above are tracked in git; the SHAP artefacts,
+the raw BWA SAM/time files (`results/bwa_wsl/`) and `results/legacy/` are ignored.
+The Gaussian NB model weights are tracked with Git LFS (`git lfs pull`).
 
 ## Reproduction
 
