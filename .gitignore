@@ -1,7 +1,19 @@
 /.ipynb_checkpoints/
 /.pytest_cache/
 /predict_seeds_JIT.py
+/__pycache__
+.idea
+
+# Model weights and artifacts (LARGE FILES - do not commit)
 model_weights/
+models/model_weights/
+*.joblib
+*.pkl
+*.h5
+*.hdf5
+*.arrow
+*.pth
+*.ckpt
 data/reference_genomes/indexed_reference.csv
 /Validation/S1_reference.csv
 /Validation/S2_reference.csv
@@ -46,6 +58,7 @@ __pycache__/
 *.pyc
 .pytest_cache
 .ipynb_checkpoints
+.claude
 
 # virtual environments
 venv/
@@ -55,6 +68,29 @@ envs/
 .eggs/
 .venv
 
-# results 
+# results
 /results/
 /data
+
+# Large data files
+*.csv.gz
+*.tar.gz
+*.zip
+*.fasta
+*.fastq
+*.bam
+*.sam
+*.vcf
+
+# UV/uv package manager
+.python-version.bak
+uv.lock
+
+# IDE and OS
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+__pycache__
