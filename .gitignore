@@ -94,3 +94,10 @@ uv.lock
 .DS_Store
 Thumbs.db
 __pycache__
+
+# large generated artifacts (logs, legacy data, experiment tracking)
+*.log
+/data_sets/
+/pyseed/
+/research/data/
+**/wandb/
